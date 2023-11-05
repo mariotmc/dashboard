@@ -1,0 +1,4 @@
+jon_doe:
+  username: Jon Doe
+  email: jon@doe.com
+  password_digest: <%= BCrypt::Password.create('password') %>
