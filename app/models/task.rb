@@ -9,4 +9,8 @@ class Task < ApplicationRecord
   enum stage: [:active, :paused, :backlog]
 
   validates :title, presence: true
+
+  scope :active, -> { where(stage: 0) }
+  scope :paused, -> { where(stage: 1) }
+  scope :backlog, -> { where(stage: 2) }
 end
