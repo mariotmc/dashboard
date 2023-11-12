@@ -1,6 +1,8 @@
 class Task < ApplicationRecord
   belongs_to :user
 
+  has_one :pull_request
+
   has_rich_text :note
 
   enum priority: [:low, :medium, :high]
