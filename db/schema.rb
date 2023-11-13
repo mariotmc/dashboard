@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_12_004232) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_13_223734) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -69,6 +69,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_12_004232) do
     t.datetime "updated_at", null: false
     t.integer "stage", default: 0
     t.bigint "pull_request_id"
+    t.datetime "due_date"
     t.index ["pull_request_id"], name: "index_tasks_on_pull_request_id"
     t.index ["user_id"], name: "index_tasks_on_user_id"
   end
