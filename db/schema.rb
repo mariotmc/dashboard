@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_13_223734) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_13_225133) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -52,11 +52,21 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_13_223734) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "external_task_trackers", force: :cascade do |t|
+    t.text "type"
+    t.text "link"
+    t.bigint "task_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["task_id"], name: "index_external_task_trackers_on_task_id"
+  end
+
   create_table "pull_requests", force: :cascade do |t|
     t.text "type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "task_id"
+    t.text "link"
     t.index ["task_id"], name: "index_pull_requests_on_task_id"
   end
 
@@ -69,7 +79,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_13_223734) do
     t.datetime "updated_at", null: false
     t.integer "stage", default: 0
     t.bigint "pull_request_id"
-    t.datetime "due_date"
+    t.datetime "due_at"
     t.index ["pull_request_id"], name: "index_tasks_on_pull_request_id"
     t.index ["user_id"], name: "index_tasks_on_user_id"
   end
@@ -84,6 +94,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_13_223734) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "external_task_trackers", "tasks"
   add_foreign_key "pull_requests", "tasks"
   add_foreign_key "tasks", "pull_requests"
   add_foreign_key "tasks", "users"
