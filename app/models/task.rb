@@ -2,6 +2,7 @@ class Task < ApplicationRecord
   belongs_to :user
 
   has_one :pull_request
+  has_one :external_task_tracker
 
   has_rich_text :note
 
@@ -13,4 +14,7 @@ class Task < ApplicationRecord
   scope :active, -> { where(stage: 0) }
   scope :paused, -> { where(stage: 1) }
   scope :backlog, -> { where(stage: 2) }
+
+  scope :due, -> { where.not(due_at: nil) }
+  scope :completed, -> { where.not(completed_at: nil) }
 end
