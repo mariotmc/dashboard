@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
-  root "tasks#index"
-  resources :tasks
+  root "dashboard#index"
+
+  resources :dashboard, only: [:index]
+  resources :resources
+  resources :reminders
 end
