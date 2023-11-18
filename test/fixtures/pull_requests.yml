@@ -1,4 +1,4 @@
 github:
   type: PullRequest::Github
-  task: one
+  task: active_one
   link: https://github.com

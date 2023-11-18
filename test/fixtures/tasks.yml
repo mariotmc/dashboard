@@ -1,3 +1,35 @@
-one:
+active_one:
   title: Task 1
   user: jon_doe
+  priority: 2
+  stage: 0
+
+active_two:
+  title: Task 2
+  user: jon_doe
+  priority: 1
+  stage: 0
+
+paused_one:
+  title: Task 3
+  user: jon_doe
+  priority: 1
+  stage: 1
+
+paused_two:
+  title: Task 4
+  user: jon_doe
+  priority: 2
+  stage: 1
+
+backlog_one:
+  title: Task 5
+  user: jon_doe
+  priority: 0
+  stage: 2
+
+backlog_two:
+  title: Task 6
+  user: jon_doe
+  priority: 0
+  stage: 2

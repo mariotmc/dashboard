@@ -1,4 +1,4 @@
 basecamp:
   type: ExternalTaskTracker::Basecamp
-  task: one
+  task: active_one
   link: https://3.basecamp.com
