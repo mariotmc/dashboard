@@ -78,9 +78,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_13_225133) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "stage", default: 0
-    t.bigint "pull_request_id"
     t.datetime "due_at"
-    t.index ["pull_request_id"], name: "index_tasks_on_pull_request_id"
     t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
@@ -96,6 +94,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_13_225133) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "external_task_trackers", "tasks"
   add_foreign_key "pull_requests", "tasks"
-  add_foreign_key "tasks", "pull_requests"
   add_foreign_key "tasks", "users"
 end
