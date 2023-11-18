@@ -1,5 +1,7 @@
 <%= render Dashboard::Layout.new(active: :dashboard) do %>
-  <div class="py-10">
-    <p>Dashboard</p>
+  <div class="py-20 lg:grid sm:grid-cols-3 sm:gap-5">
+    <%= render Dashboard::TasksList.new(stage: :active) %>
+    <%= render Dashboard::TasksList.new(stage: :paused) %>
+    <%= render Dashboard::TasksList.new(stage: :backlog) %>
   </div>
 <% end %>

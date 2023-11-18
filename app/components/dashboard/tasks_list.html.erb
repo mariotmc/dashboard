@@ -1,0 +1,13 @@
+<div class="max-w-sm p-4 rounded-lg shadow">
+  <div class="flex items-center gap-4 mb-3">
+    <%= render ::Icon.new(icon: "#{@icon}", css: "text-#{@color}-400") %>
+
+    <h2 class="text-gray-800 text-center font-semibold"><%= @title %></h2>
+
+    <span class="py-0.5 px-2 bg-<%= @color %>-100 text-<%= @color %>-900 font-bold rounded-lg"><%= @tasks.count %></span>
+  </div>
+
+  <% @tasks.each do |task| %>
+    <h3><%= task.title %></h3>
+  <% end %>
+</div>
