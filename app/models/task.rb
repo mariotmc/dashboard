@@ -17,4 +17,12 @@ class Task < ApplicationRecord
 
   scope :due, -> { where.not(due_at: nil) }
   scope :completed, -> { where.not(completed_at: nil) }
+
+  def pull_request_link?
+    pull_request&.link.present?
+  end
+
+  def external_task_tracker_link?
+    external_task_tracker&.link.present?
+  end
 end
