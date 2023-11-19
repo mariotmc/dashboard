@@ -1,0 +1,5 @@
+<%= form_with model: @task, url: dashboard_tasks_path do |f| %>
+  <div class="mb-8">
+    <%= render Ui::Forms::TextField.new(form: f, field: :title, placeholder: "Enter a task title") %>
+  </div>
+<% end %>
