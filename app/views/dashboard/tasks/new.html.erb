@@ -1,0 +1,10 @@
+<%= render Dashboard::Layout.new(active: :dashboard) do %>
+  <div class="max-w-xs py-20">
+    <h1 class="flex items-center gap-3 mb-10 text-gray-800 text-3xl font-medium leading-4">
+      New Task
+      <%= render Ui::Icon.new(icon: "list-check", css: "h-6 w-6 text-indigo-600") %>
+    </h1>
+
+    <%= render "form" %>
+  </div>
+<% end %>
