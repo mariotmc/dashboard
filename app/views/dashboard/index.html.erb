@@ -1,7 +1,7 @@
 <%= render Dashboard::Layout.new(active: :dashboard) do %>
   <div class="py-20 lg:grid sm:grid-cols-3 sm:gap-5">
-    <%= render Dashboard::TasksList.new(tasks: Task.active, title: "Active", color: "emerald", icon: "circle-half-stroke", url: "new_dashboard_task_path?stage=active") %>
-    <%= render Dashboard::TasksList.new(tasks: Task.paused, title: "Paused", color: "amber", icon: "circle-stop", url: "new_dashboard_task_path?stage=paused") %>
-    <%= render Dashboard::TasksList.new(tasks: Task.backlog, title: "Backlog", color: "stone", icon: "circle-dot", url: "new_dashboard_task_path?stage=backlog") %>
+    <%= render Dashboard::TasksList.new(tasks: Task.active, title: "Active", color: "emerald", icon: "circle-half-stroke", url: new_dashboard_task_path(stage: "active")) %>
+    <%= render Dashboard::TasksList.new(tasks: Task.paused, title: "Paused", color: "amber", icon: "circle-stop", url: new_dashboard_task_path(stage: "paused")) %>
+    <%= render Dashboard::TasksList.new(tasks: Task.backlog, title: "Backlog", color: "stone", icon: "circle-dot", url: new_dashboard_task_path(stage: "backlog")) %>
   </div>
 <% end %>
