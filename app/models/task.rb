@@ -1,8 +1,8 @@
 class Task < ApplicationRecord
   belongs_to :user
 
-  has_one :pull_request
-  has_one :external_task_tracker
+  has_one :pull_request, dependent: :destroy
+  has_one :external_task_tracker, dependent: :destroy
 
   has_rich_text :note
 
