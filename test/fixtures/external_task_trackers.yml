@@ -8,12 +8,12 @@ basecamp_paused_one:
   task: paused_one
   link: https://3.basecamp.com
 
-basecamp_paused_two:
-  type: ExternalTaskTracker::Basecamp
+linear_paused_two:
+  type: ExternalTaskTracker::Linear
   task: paused_two
-  link: https://3.basecamp.com
+  link: https://linear.app
 
-basecamp_backlog_one:
-  type: ExternalTaskTracker::Basecamp
+linear_backlog_one:
+  type: ExternalTaskTracker::Linear
   task: backlog_one
-  link: https://3.basecamp.com
+  link: https://linear.app
