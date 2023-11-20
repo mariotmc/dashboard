@@ -24,11 +24,11 @@ module Ui
       attr_reader :active
 
       def active_desktop_css
-        "h-fit inline-flex items-center px-4 py-2 bg-indigo-600 text-sm font-medium text-white rounded-md"
+        "h-fit inline-flex items-center px-4 py-2 bg-indigo-600 text-sm font-medium text-white rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
       end
 
       def inactive_desktop_css
-        "h-fit inline-flex items-center px-4 py-2 text-sm font-medium text-gray-500 rounded-md hover:bg-indigo-100 hover:text-gray-700"
+        "h-fit inline-flex items-center px-4 py-2 text-sm font-medium text-gray-500 rounded-md hover:bg-indigo-100 hover:text-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
       end
 
       def active_mobile_css
