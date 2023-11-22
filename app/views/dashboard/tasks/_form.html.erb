@@ -1,9 +1,9 @@
 <%= form_with model: @task, url: dashboard_tasks_path do |f| %>
   <div class="mb-8">
-    <%= render Ui::Forms::TextField.new(form: f, field: :title, placeholder: "Add a task title") %>
+    <%= render Ui::Forms::TextField.new(form: f, field: :title, placeholder: "Add a task title", autofocus: true) %>
   </div>
 
   <div class="mb-8">
-    <%= render Ui::Forms::RichTextArea.new(form: f, field: :title, placeholder: "Add some notes") %>
+    <%= render Ui::Forms::RichTextArea.new(form: f, field: :note, placeholder: "Add some notes") %>
   </div>
 <% end %>
