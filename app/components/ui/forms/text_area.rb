@@ -1,16 +1,17 @@
 module Ui
   module Forms
     class TextArea < ViewComponent::Base
-      def initialize(form:, field:, placeholder: nil, autofocus: false, rows: 4)
+      def initialize(form:, field:, placeholder: nil, optional: true, autofocus: false, rows: 4)
         @form = form
         @field = field
         @placeholder = placeholder
+        @optional = optional
         @autofocus = autofocus
         @rows = rows
       end
 
       private
-        attr_reader :form, :field, :placeholder, :autofocus, :rows
+        attr_reader :form, :field, :placeholder, :optional, :autofocus, :rows
     end
   end
 end
