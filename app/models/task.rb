@@ -4,7 +4,7 @@ class Task < ApplicationRecord
   has_one :pull_request, dependent: :destroy
   has_one :external_task_tracker, dependent: :destroy
 
-  has_rich_text :note
+  has_rich_text :notes
 
   enum priority: [:low, :medium, :high]
   enum stage: [:active, :paused, :backlog]

@@ -10,7 +10,7 @@ module Dashboard
 
     private
       def task_params
-        params.require(:task).permit(:title, :note, :priority, :stage, :pull_request, :external_task_tracker, :due_at)
+        params.require(:task).permit(:title, :notes, :priority, :stage, :pull_request, :external_task_tracker, :due_at)
       end
   end
 end
