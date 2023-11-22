@@ -2,6 +2,7 @@ module Dashboard
   class TasksController < ApplicationController
     def new
       @task = Task.new
+      @stage = params[:stage] || "backlog"
     end
 
     def create
