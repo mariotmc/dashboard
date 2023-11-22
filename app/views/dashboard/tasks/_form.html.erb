@@ -1,9 +1,16 @@
-<%= form_with model: @task, url: dashboard_tasks_path do |f| %>
-  <div class="mb-8">
+<%= form_with model: @task, url: dashboard_tasks_path, class: "space-y-5" do |f| %>
     <%= render Ui::Forms::TextField.new(form: f, field: :title, placeholder: "Add a task title", autofocus: true) %>
-  </div>
 
-  <div class="mb-8">
-    <%= render Ui::Forms::TextArea.new(form: f, field: :note, placeholder: "Add some notes") %>
-  </div>
+    <%= render Ui::Forms::RadioGroup.new(label: "Stage") do %>
+      <%= render Ui::Forms::RadioButton.new(form: f, field: :stage, label: "Backlog", value: :backlog, checked: true) %>
+      <%= render Ui::Forms::RadioButton.new(form: f, field: :stage, label: "Active", value: :active) %>
+    <% end %>
+
+    <%= render Ui::Forms::RadioGroup.new(label: "Priority") do %>
+      <%= render Ui::Forms::RadioButton.new(form: f, field: :priority, label: "Low", value: :low, checked: true) %>
+      <%= render Ui::Forms::RadioButton.new(form: f, field: :priority, label: "Medium", value: :medium) %>
+      <%= render Ui::Forms::RadioButton.new(form: f, field: :priority, label: "High", value: :high) %>
+    <% end %>
+
+    <%= render Ui::Forms::TextArea.new(form: f, field: :notes, placeholder: "Add some notes") %>
 <% end %>
