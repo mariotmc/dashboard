@@ -9,11 +9,12 @@
       <%= render Ui::Forms::RadioButton.new(form: f, field: :priority, label: "High", value: :high) %>
     <% end %>
 
+    <%= render Ui::Forms::DateField.new(form: f, field: :due_at, optional: true)  %>
+    
     <%= render Ui::Forms::UrlField.new(form: f, field: :external_task_tracker, type: :external_task_tracker, optional: true)  %>
     
     <%= render Ui::Forms::UrlField.new(form: f, field: :pull_request, type: :pull_request, optional: true)  %>
 
-    <%= render Ui::Forms::DateField.new(form: f, field: :due_at, optional: true)  %>
 
     <%= render Ui::Forms::TextArea.new(form: f, field: :notes, placeholder: "Add some notes", optional: true) %>
 <% end %>
