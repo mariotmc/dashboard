@@ -1,10 +1,11 @@
 module Ui
   module Forms
     class RichTextArea < ViewComponent::Base
-      def initialize(form:, field:, placeholder: nil, autofocus: false)
+      def initialize(form:, field:, placeholder: nil, optional: false, autofocus: false)
         @form = form
         @field = field
         @placeholder = placeholder
+        @optional = optional
         @autofocus = autofocus
       end
 
