@@ -17,4 +17,9 @@
 
 
     <%= render Ui::Forms::TextArea.new(form: f, field: :notes, placeholder: "Add some notes", optional: true) %>
+
+    <div class="flex gap-4">
+      <%= render Ui::Buttons::Cancel.new(text: "Cancel", url: dashboard_index_path, css: "w-full") %>
+      <%= render Ui::Buttons::Submit.new(text: "Create", css: "w-full") %>
+    </div>
 <% end %>
