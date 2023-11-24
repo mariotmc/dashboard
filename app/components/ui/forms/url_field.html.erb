@@ -7,7 +7,9 @@
   </div>
 
   <div class="flex gap-2">
-    <%= select_tag "#{field}_type", options_for_select(@collection), class: "block mt-1 w-fit rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" %> 
-    <%= form.url_field field, class: "block mt-1 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6", placeholder: "Enter a URL", autofocus: autofocus %>
+    <%= form.fields_for field do |ff| %>
+      <%= form.select "#{field}_type", options_for_select(@collection), class: "block mt-1 w-fit rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" %> 
+      <%= form.url_field "#{field}_link", class: "block mt-1 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6", placeholder: "Enter a URL", autofocus: autofocus %>
+    <% end %>
   </div>
 </div>

@@ -4,6 +4,9 @@ class Task < ApplicationRecord
   has_one :pull_request, dependent: :destroy
   has_one :external_task_tracker, dependent: :destroy
 
+  accepts_nested_attributes_for :pull_request
+  accepts_nested_attributes_for :external_task_tracker
+
   has_rich_text :notes
 
   enum priority: [:low, :medium, :high]
