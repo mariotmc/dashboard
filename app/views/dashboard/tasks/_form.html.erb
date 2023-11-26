@@ -1,5 +1,5 @@
 <%= form_with model: @task, url: dashboard_tasks_path, class: "space-y-8" do |f| %>
-     <%= f.hidden_field :stage, value: @stage %> 
+    <%= f.hidden_field :stage, value: @stage %> 
 
     <%= render Ui::Forms::TextField.new(form: f, field: :title, placeholder: "Add a task title", autofocus: true) %>
 
@@ -8,13 +8,16 @@
       <%= render Ui::Forms::RadioButton.new(form: f, field: :priority, label: "Medium", value: :medium) %>
       <%= render Ui::Forms::RadioButton.new(form: f, field: :priority, label: "High", value: :high) %>
     <% end %>
-
-    <%= render Ui::Forms::DateField.new(form: f, field: :due_at, optional: true)  %>
     
-    <%= render Ui::Forms::UrlField.new(form: f, field: :external_task_tracker, type: :external_task_tracker, optional: true)  %>
+    <%= render Ui::Forms::DateField.new(form: f, field: :due_at, optional: true) %>
     
-    <%= render Ui::Forms::UrlField.new(form: f, field: :pull_request, type: :pull_request, optional: true)  %>
-
+    <%= f.fields_for :external_task_tracker do |ff| %>
+      <%= render Ui::Forms::UrlField.new(form: ff, field: :external_task_tracker, optional: true) %>
+    <% end %>
+    
+    <%= f.fields_for :pull_request do |ff| %>
+      <%= render Ui::Forms::UrlField.new(form: ff, field: :pull_request, optional: true) %>
+    <% end %>
 
     <%= render Ui::Forms::TextArea.new(form: f, field: :notes, placeholder: "Add some notes", optional: true) %>
 

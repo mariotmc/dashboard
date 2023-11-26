@@ -1,15 +1,15 @@
 <div>
   <div class="flex justify-between">
-    <%= form.label field, class: "block text-sm font-medium leading-6 text-gray-900" %>
+    <%= form.label field,  class: "block text-sm font-medium leading-6 text-gray-900" %>
+
     <% if optional %>
       <span class="text-sm leading-6 text-gray-500" id="email-optional">Optional</span>
     <% end %>
   </div>
 
   <div class="flex gap-2">
-    <%= form.fields_for field do |ff| %>
-      <%= form.select "#{field}_type", options_for_select(@collection), class: "block mt-1 w-fit rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" %> 
-      <%= form.url_field "#{field}_link", class: "block mt-1 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6", placeholder: "Enter a URL", autofocus: autofocus %>
-    <% end %>
+    <%= form.select :type, options_for_select(@collection), {}, {class: "block mt-1 w-fit rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"} %>
+
+    <%= form.url_field :link, class: "block mt-1 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6", placeholder: "Enter a URL", autofocus: autofocus %>
   </div>
 </div>
