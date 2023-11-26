@@ -19,6 +19,14 @@ module Dashboard
       end
     end
 
+    def update
+    end
+
+    def destroy
+      @task = Task.find(params[:id])
+      @task.destroy
+    end
+
     private
       def task_params
         params.require(:task).permit(:user, :stage, :title, :priority, :due_at, :notes,
