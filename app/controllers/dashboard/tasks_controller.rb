@@ -1,5 +1,7 @@
 module Dashboard
   class TasksController < ApplicationController
+    before_action :set_task, only: [:show, :edit, :update, :destroy]
+
     def new
       @task = Task.new
       @task.pull_request = PullRequest.new
@@ -20,12 +22,9 @@ module Dashboard
     end
 
     def edit
-      @task = Task.find(params[:id])
     end
 
     def update
-      @task = Task.find(params[:id])
-
       if @task.update(task_params)
         redirect_to dashboard_index_path
       else
@@ -33,8 +32,10 @@ module Dashboard
       end
     end
 
+    def show
+    end
+
     def destroy
-      @task = Task.find(params[:id])
       @task.destroy
     end
 
@@ -42,6 +43,10 @@ module Dashboard
       def task_params
         params.require(:task).permit(:user, :stage, :title, :priority, :due_at, :notes,
           external_task_tracker_attributes: [:id, :type, :link], pull_request_attributes: [:id, :type, :link])
+      end
+
+      def set_task
+        @task = Task.find(params[:id])
       end
   end
 end

@@ -1,0 +1,33 @@
+<%= render Dashboard::Layout.new(active: :dashboard) do %>
+  <div class="max-w-3xl mx-auto py-20">
+    <div class="flex justify-between items-center">
+      <%= render Ui::Buttons::Back.new(text: "Tasks", url: dashboard_index_path) %>
+
+      <h1 class="text-gray-800 text-3xl font-medium">
+        <%= @task.title %>
+      </h1>
+
+      <div class="flex items-center gap-3">
+        <%= render Ui::Icons::Priority.new(priority: @task.priority) %>
+
+        <% if @task.due_at? %>
+          <%= render Ui::Icons::DueDate.new(due_date: @task.due_at) %>
+        <% end %>
+
+        <% if @task.pull_request_link? %>
+          <%= render @task.pull_request, pull_request: @task.pull_request %>
+        <% end %>
+
+        <% if @task.external_task_tracker_link? %>
+          <%= render @task.external_task_tracker, external_task_tracker: @task.external_task_tracker %>
+        <% end %>
+
+        <%= render Ui::Buttons::Edit.new(url: edit_dashboard_task_path(@task), icon: "arrow-right") %>
+      </div>
+    </div>
+
+    <div class="w-full mt-10 py-10 px-5 border border-indigo-100 rounded-lg">
+      <%= @task.notes %>
+    </div>
+  </div>
+<% end %>
