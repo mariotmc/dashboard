@@ -1,0 +1,11 @@
+<%= render Dashboard::Layout.new(active: :dashboard) do %>
+  <div class="max-w-xs py-10">
+    <%= render Ui::Buttons::Back.new(text: "Tasks", url: dashboard_index_path) %>
+
+    <h1 class="my-10 text-gray-800 text-3xl font-medium">
+      <%= @task.title %>
+    </h1>
+
+    <%= render "form", url: dashboard_task_path, method: :put %>
+  </div>
+<% end %>

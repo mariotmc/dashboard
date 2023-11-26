@@ -19,7 +19,18 @@ module Dashboard
       end
     end
 
+    def edit
+      @task = Task.find(params[:id])
+    end
+
     def update
+      @task = Task.find(params[:id])
+
+      if @task.update(task_params)
+        redirect_to dashboard_index_path
+      else
+        render :new, status: :unprocessable_entity
+      end
     end
 
     def destroy
@@ -30,7 +41,7 @@ module Dashboard
     private
       def task_params
         params.require(:task).permit(:user, :stage, :title, :priority, :due_at, :notes,
-          external_task_tracker_attributes: [:type, :link], pull_request_attributes: [:type, :link])
+          external_task_tracker_attributes: [:id, :type, :link], pull_request_attributes: [:id, :type, :link])
       end
   end
 end
