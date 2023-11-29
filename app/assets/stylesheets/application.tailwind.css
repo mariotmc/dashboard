@@ -11,4 +11,56 @@
 }
 
 */
-@import 'actiontext.css';
+@import "actiontext.css";
+
+trix-toolbar {
+  @apply mt-1 mb-2 py-2 px-1.5 bg-indigo-50 rounded-lg !important;
+}
+
+trix-toolbar .trix-button-group:not(:first-child) {
+  @apply m-0 !important;
+}
+
+trix-toolbar .trix-button-group {
+  @apply m-0 border-none !important;
+}
+
+trix-toolbar .trix-button-row {
+  @apply justify-center !important;
+}
+
+trix-toolbar .trix-button:not(:first-child) {
+  @apply border-none !important;
+}
+
+.trix-button-row .trix-button {
+  @apply p-0 border-b-0 rounded-lg !important;
+}
+
+trix-toolbar .trix-button.trix-active {
+  @apply bg-indigo-200 !important;
+}
+
+trix-toolbar .trix-button--icon {
+  @apply w-10 h-auto !important;
+}
+
+.trix-button--icon-strike {
+  @apply hidden !important;
+}
+
+.trix-button-group--history-tools {
+  @apply hidden !important;
+}
+
+.trix-button-group-spacer {
+  @apply hidden !important;
+}
+
+.trix-button--icon-decrease-nesting-level {
+  @apply hidden !important;
+}
+
+.trix-button--icon-increase-nesting-level {
+  @apply hidden !important;
+}
