@@ -10,7 +10,7 @@ module Ui
       end
 
       private
-        attr_reader :form, :field, :placeholder, :autofocus
+        attr_reader :form, :field, :placeholder, :optional, :autofocus
     end
   end
 end
