@@ -2,8 +2,9 @@
   <div class="max-w-sm py-10">
     <%= render Ui::Buttons::Back.new(text: "Tasks", url: dashboard_index_path) %>
 
-    <h1 class="my-10 text-gray-800 text-3xl font-medium">
+    <h1 class="flex items-center gap-3 mt-8 text-gray-800 text-3xl font-medium leading-4">
       <%= @task.title %>
+      <%= render Ui::Icon.new(icon: "list-check", css: "h-6 w-6 text-indigo-600") %>
     </h1>
 
     <%= render "form", url: dashboard_task_path, method: :put %>
