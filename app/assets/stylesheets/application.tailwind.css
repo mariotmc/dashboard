@@ -64,3 +64,7 @@ trix-toolbar .trix-button--icon {
 .trix-button--icon-increase-nesting-level {
   @apply hidden !important;
 }
+
+#task_notes {
+  @apply min-h-[112px] !important;
+}
