@@ -1,0 +1,10 @@
+<% if icon %>
+  <%= link_to url, class: "flex justify-center items-center gap-1.5 w-fit rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm cursor-pointer hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 #{css}" do %>
+    <%= render Ui::Icon.new(icon: icon, css: icon_css) %>
+    <% if text %>
+      <%= text %>
+    <% end %>
+  <% end %>
+<% else %>
+  <%= link_to text, url, class: "flex justify-center items-center gap-1.5 w-fit rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm cursor-pointer hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 #{css}" %>
+<% end %>

@@ -22,7 +22,7 @@
     <%= render Ui::Forms::RichTextArea.new(form: f, field: :notes, placeholder: "Add some notes", optional: true) %>
 
     <div class="flex gap-4">
-      <%= render Ui::Buttons::Cancel.new(text: "Cancel", url: dashboard_index_path, css: "w-full") %>
+      <%= render Ui::Links::Tertiary.new(text: "Cancel", url: dashboard_index_path, css: "w-full") %>
       <%= render Ui::Buttons::Submit.new(form: f, text: "Submit", css: "w-full") %>
     </div>
 <% end %>

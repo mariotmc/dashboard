@@ -5,7 +5,7 @@
     <div class="flex items-center gap-2">
       <%= render Ui::Icons::Priority.new(priority: task.priority) %>
 
-      <%= render Ui::Buttons::Show.new(url: dashboard_task_path(task), icon: "arrow-right") %>
+      <%= render Ui::Links::Plain.new(url: dashboard_task_path(task), icon: "arrow-right") %>
     </div>
   </div>
 
@@ -21,8 +21,8 @@
     </div>
 
     <div class="flex items-center gap-3">
-      <%= render Ui::Buttons::Complete.new(url: dashboard_task_path(task)) %>
-      <%= render Ui::Buttons::Delete.new(url: dashboard_task_path(task)) %>
+      <%= render Ui::Buttons::Action.new(url: dashboard_task_path(task), icon: "check", method: :put, color: "emerald") %>
+      <%= render Ui::Buttons::Action.new(url: dashboard_task_path(task), icon: "trash", method: :delete, color: "red") %>
     </div>
   </div>
 </div>
