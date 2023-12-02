@@ -5,9 +5,9 @@
 
       <h2 class="text-gray-800 text-center font-semibold"><%= title %></h2>
 
-      <span class="py-0.5 px-2 bg-<%= color %>-100 text-<%= color %>-900 font-semibold rounded-lg">
+      <%= turbo_frame_tag "#{title.downcase}_counter", class: "py-0.5 px-2 bg-#{color}-100 text-#{color}-900 font-semibold rounded-lg" do %>
         <%= tasks.count %>
-      </span>
+      <% end %>
     </div>
 
     <div class="ml-auto">
