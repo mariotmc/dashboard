@@ -1,6 +1,6 @@
 module Ui
   module Buttons
-    class Submit < ViewComponent::Base
+    class Submit < Base
       def initialize(form:, text:, css: nil)
         @form = form
         @text = text

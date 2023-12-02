@@ -1,6 +1,6 @@
 module Ui
   module Forms
-    class DateField < ViewComponent::Base
+    class DateField < Base
       def initialize(form:, field:, optional: false, autofocus: false)
         @form = form
         @field = field

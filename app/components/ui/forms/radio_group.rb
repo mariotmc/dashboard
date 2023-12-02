@@ -1,6 +1,6 @@
 module Ui
   module Forms
-    class RadioGroup < ViewComponent::Base
+    class RadioGroup < Base
       def initialize(label:)
         @label = label
       end

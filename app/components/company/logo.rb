@@ -1,4 +1,4 @@
 module Company
-  class Logo < ViewComponent::Base
+  class Logo < Base
   end
 end

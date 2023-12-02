@@ -1,6 +1,6 @@
 module Ui
   module Forms
-    class RadioButton < ViewComponent::Base
+    class RadioButton < Base
       def initialize(form:, field:, label: nil, value:, checked: false, autofocus: false)
         @form = form
         @field = field

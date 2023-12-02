@@ -1,6 +1,6 @@
 module Ui
   module Forms
-    class TextArea < ViewComponent::Base
+    class TextArea < Base
       def initialize(form:, field:, placeholder: nil, optional: false, autofocus: false, rows: 4)
         @form = form
         @field = field

@@ -1,5 +1,5 @@
 module Ui
-  class TopNav < ViewComponent::Base
+  class TopNav < Base
     def initialize(active:)
       @active = active
     end

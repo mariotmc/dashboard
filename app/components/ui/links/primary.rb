@@ -1,6 +1,6 @@
 module Ui
   module Links
-    class Primary < ViewComponent::Base
+    class Primary < Base
       def initialize(text: nil, url:, icon: nil, css: nil, icon_css: nil)
         @text = text
         @url = url

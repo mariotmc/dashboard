@@ -1,4 +1,4 @@
 module Company
-  class LogoWithText < ViewComponent::Base
+  class LogoWithText < Base
   end
 end

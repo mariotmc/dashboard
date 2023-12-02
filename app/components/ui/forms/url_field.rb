@@ -1,6 +1,6 @@
 module Ui
   module Forms
-    class UrlField < ViewComponent::Base
+    class UrlField < Base
       def initialize(form:, field:, optional: false, autofocus: false)
         @form = form
         @field = field

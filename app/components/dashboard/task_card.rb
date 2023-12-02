@@ -1,5 +1,5 @@
 module Dashboard
-  class TaskCard < ViewComponent::Base
+  class TaskCard < Base
     with_collection_parameter :task
 
     def initialize(task:)

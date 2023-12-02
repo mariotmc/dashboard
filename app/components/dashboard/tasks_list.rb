@@ -1,5 +1,5 @@
 module Dashboard
-  class TasksList < ViewComponent::Base
+  class TasksList < Base
     def initialize(tasks:, title:, color:, icon:, url:)
       @tasks = tasks
       @title = title

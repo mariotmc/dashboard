@@ -1,6 +1,6 @@
 module Ui
   module Buttons
-    class Action < ViewComponent::Base
+    class Action < Base
       def initialize(text: nil, icon: nil, url:, method:, color:, css: nil)
         @text = text
         @icon = icon

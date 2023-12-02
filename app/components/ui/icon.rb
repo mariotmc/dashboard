@@ -1,5 +1,5 @@
 module Ui
-  class Icon < ViewComponent::Base
+  class Icon < Base
     def initialize(icon:, css: nil)
       @icon = icon
       @css = css

@@ -1,6 +1,6 @@
 module Ui
   module Links
-    class Round < ViewComponent::Base
+    class Round < Base
       def initialize(url:, icon:, css: nil, icon_css: nil)
         @url = url
         @icon = icon

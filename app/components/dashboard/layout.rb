@@ -1,5 +1,5 @@
 module Dashboard
-  class Layout < ViewComponent::Base
+  class Layout < Base
     def initialize(active:)
       @active = active
     end

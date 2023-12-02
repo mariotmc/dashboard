@@ -1,6 +1,6 @@
 module Ui
   module Icons
-    class DueDate < ViewComponent::Base
+    class DueDate < Base
       def initialize(due_date:)
         @due_date = due_date
       end

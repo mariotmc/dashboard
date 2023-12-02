@@ -1,6 +1,6 @@
 module Ui
   module Icons
-    class Priority < ViewComponent::Base
+    class Priority < Base
       def initialize(priority:)
         @priority = priority
       end
