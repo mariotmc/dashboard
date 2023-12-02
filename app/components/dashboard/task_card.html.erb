@@ -1,4 +1,4 @@
-<div class="p-4 rounded-lg shadow">
+<%= turbo_frame_tag @task, class: "p-4 rounded-lg shadow" do %>
   <div class="flex justify-between items-center pb-3">
     <h3 class="text-gray-800 font-semibold"><%= task.title.truncate(30) %></h3>
 
@@ -25,4 +25,4 @@
       <%= render Ui::Buttons::Action.new(url: dashboard_task_path(task), icon: "trash", method: :delete, color: "red") %>
     </div>
   </div>
-</div>
+<% end %>
