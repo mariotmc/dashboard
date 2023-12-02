@@ -4,8 +4,8 @@ module Dashboard
 
     def new
       @task = Task.new
-      @task.pull_request = PullRequest.new
-      @task.external_task_tracker = ExternalTaskTracker.new
+      @task.build_pull_request
+      @task.build_external_task_tracker
       @stage = params[:stage] || "backlog"
     end
 
@@ -14,7 +14,7 @@ module Dashboard
       @task.user = User.find_by(email: "jon@doe.com")
 
       if @task.save
-        redirect_to dashboard_index_path
+        redirect_to dashboard_task_path(@task)
       else
         @stage = task_params[:stage]
         render :new, status: :unprocessable_entity
