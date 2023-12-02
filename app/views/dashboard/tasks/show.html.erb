@@ -27,14 +27,18 @@
     </div>
 
     <% if @task.notes.present? %>
-      <div class="w-full mt-10 py-10 px-5 border border-indigo-100 rounded-lg">
+      <div class="w-full my-10 py-10 px-5 border border-indigo-100 rounded-lg">
         <%= @task.notes %>
       </div>
     <% end %>
 
-    <div class="flex items-center gap-3 mt-10">
-      <%= render Ui::Buttons::Action.new(text: "Complete", url: dashboard_task_path(@task), method: :put, color: "emerald", css: "w-full py-2") %>
-      <%= render Ui::Buttons::Action.new(text: "Delete", url: dashboard_task_path(@task), method: :delete, color: "red", css: "w-full py-2") %>
+    <div class="flex items-center gap-3">
+      <div class="w-full">
+        <%= render Ui::Buttons::Action.new(text: "Delete", url: dashboard_task_path(@task), method: :delete, color: "red", css: "w-full py-2") %>
+      </div>
+      <div class="w-full">
+        <%= render Ui::Buttons::Action.new(text: "Complete", url: dashboard_task_path(@task), method: :put, color: "emerald", css: "w-full py-2") %>
+      </div>
     </div>
   </div>
 <% end %>
