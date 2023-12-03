@@ -11,7 +11,7 @@
         <%= render Ui::Icons::Priority.new(priority: @task.priority) %>
 
         <% if @task.due_at? %>
-          <%= render Ui::Icons::DueDate.new(due_date: @task.due_at) %>
+          <%= render Ui::Icons::DueDate.new(due_date: @task.due_at, css: "!text-sm", icon_css: "h-5 w-5") %>
         <% end %>
 
         <% if @task.pull_request_link? %>
