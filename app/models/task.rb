@@ -14,9 +14,9 @@ class Task < ApplicationRecord
 
   validates :title, presence: true
 
-  scope :active, -> { where(stage: 0) }
-  scope :paused, -> { where(stage: 1) }
-  scope :backlog, -> { where(stage: 2) }
+  scope :active, -> { where(stage: 0, completed_at: nil) }
+  scope :paused, -> { where(stage: 1, completed_at: nil) }
+  scope :backlog, -> { where(stage: 2, completed_at: nil) }
 
   scope :due, -> { where.not(due_at: nil) }
   scope :completed, -> { where.not(completed_at: nil) }
