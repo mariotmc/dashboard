@@ -8,4 +8,8 @@ Rails.application.routes.draw do
 
   resources :resources
   resources :reminders
+
+  namespace :tasks do
+    resources :completes, only: [:update]
+  end
 end

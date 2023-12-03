@@ -21,7 +21,7 @@
     </div>
 
     <div class="flex items-center gap-3">
-      <%= render Ui::Buttons::Action.new(url: dashboard_task_path(task), icon: "check", method: :put, color: "emerald") %>
+      <%= render Ui::Buttons::Action.new(url: tasks_complete_path(task), icon: "check", method: :put, color: "emerald") %>
       <%= render Ui::Buttons::Action.new(url: dashboard_task_path(task), icon: "trash", method: :delete, color: "red") %>
     </div>
   </div>
