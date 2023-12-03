@@ -1,5 +1,0 @@
-<%= turbo_stream.remove @task %>
-
-<%= turbo_stream.update "#{@task.stage}_counter" do %>
-  <%= @task.stage_scope.count %>
-<% end %>

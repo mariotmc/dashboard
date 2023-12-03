@@ -37,6 +37,8 @@ module Dashboard
 
     def destroy
       @task.destroy
+
+      redirect_to dashboard_index_path
     end
 
     private
