@@ -26,7 +26,7 @@ module Dashboard
 
     def update
       if @task.update(task_params)
-        redirect_to dashboard_index_path
+        redirect_to dashboard_task_path(@task)
       else
         render :new, status: :unprocessable_entity
       end
