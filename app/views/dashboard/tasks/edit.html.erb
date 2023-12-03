@@ -7,6 +7,6 @@
       <%= render Ui::Icon.new(icon: "list-check", css: "h-6 w-6 text-indigo-600") %>
     </h1>
 
-    <%= render "form", url: dashboard_task_path, method: :put %>
+    <%= render "form", submit_url: dashboard_task_path, cancel_url: dashboard_task_path(@task), method: :put %>
   </div>
 <% end %>
