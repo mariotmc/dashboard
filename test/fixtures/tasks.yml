@@ -3,18 +3,21 @@ active_one:
   user: jon_doe
   priority: 2
   stage: 0
+  due_at: <%= 2.days.from_now %>
 
 active_two:
   title: Task 2
   user: jon_doe
   priority: 1
   stage: 0
+  due_at: <%= 4.days.from_now %>
 
 paused_one:
   title: Task 3
   user: jon_doe
   priority: 1
   stage: 1
+  due_at: <%= 7.days.from_now %>
 
 paused_two:
   title: Task 4

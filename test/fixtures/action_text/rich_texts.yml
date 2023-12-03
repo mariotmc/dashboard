@@ -1,4 +1,29 @@
-# one:
-#   record: name_of_fixture (ClassOfFixture)
-#   name: content
-#   body: <p>In a <i>million</i> stars!</p>
+active_one:
+  record: active_one (Task)
+  name: notes
+  body: <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores velit exercitationem quasi animi debitis expedita consequatur eveniet commodi ratione, consectetur deleniti reprehenderit, quis cupiditate natus, adipisci neque necessitatibus id libero laboriosam illo fugit? Dicta tempora, fugit aut quos molestiae dolorum nihil exercitationem, sequi ullam impedit unde vitae quod blanditiis vero?</div>
+
+active_two:
+  record: active_two (Task)
+  name: notes
+  body: <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores velit exercitationem quasi animi debitis expedita consequatur eveniet commodi ratione, consectetur deleniti reprehenderit, quis cupiditate natus, adipisci neque necessitatibus id libero laboriosam illo fugit? Dicta tempora, fugit aut quos molestiae dolorum nihil exercitationem, sequi ullam impedit unde vitae quod blanditiis vero?</div>
+
+paused_one:
+  record: paused_one (Task)
+  name: notes
+  body: <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores velit exercitationem quasi animi debitis expedita consequatur eveniet commodi ratione, consectetur deleniti reprehenderit, quis cupiditate natus, adipisci neque necessitatibus id libero laboriosam illo fugit? Dicta tempora, fugit aut quos molestiae dolorum nihil exercitationem, sequi ullam impedit unde vitae quod blanditiis vero?</div>
+
+paused_two:
+  record: paused_two (Task)
+  name: notes
+  body: <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores velit exercitationem quasi animi debitis expedita consequatur eveniet commodi ratione, consectetur deleniti reprehenderit, quis cupiditate natus, adipisci neque necessitatibus id libero laboriosam illo fugit? Dicta tempora, fugit aut quos molestiae dolorum nihil exercitationem, sequi ullam impedit unde vitae quod blanditiis vero?</div>
+
+backlog_one:
+  record: backlog_one (Task)
+  name: notes
+  body: <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores velit exercitationem quasi animi debitis expedita consequatur eveniet commodi ratione, consectetur deleniti reprehenderit, quis cupiditate natus, adipisci neque necessitatibus id libero laboriosam illo fugit? Dicta tempora, fugit aut quos molestiae dolorum nihil exercitationem, sequi ullam impedit unde vitae quod blanditiis vero?</div>
+
+backlog_two:
+  record: backlog_two (Task)
+  name: notes
+  body: <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores velit exercitationem quasi animi debitis expedita consequatur eveniet commodi ratione, consectetur deleniti reprehenderit, quis cupiditate natus, adipisci neque necessitatibus id libero laboriosam illo fugit? Dicta tempora, fugit aut quos molestiae dolorum nihil exercitationem, sequi ullam impedit unde vitae quod blanditiis vero?</div>
