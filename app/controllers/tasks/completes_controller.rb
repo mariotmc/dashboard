@@ -4,6 +4,8 @@ module Tasks
 
     def update
       @task.update!(completed_at: Date.today)
+
+      redirect_to dashboard_index_path
     end
 
     private
