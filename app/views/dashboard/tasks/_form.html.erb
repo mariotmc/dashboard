@@ -1,3 +1,5 @@
+<% cancel_url = local_assigns[:cancel_url] || nil %>
+
 <%= form_with model: @task, url: submit_url, method: method, class: "space-y-8" do |f| %>
     <%= f.hidden_field :stage, value: @stage || @task.stage %> 
 
@@ -22,7 +24,9 @@
     <%= render Ui::Forms::RichTextArea.new(form: f, field: :notes, placeholder: "Add some notes", optional: true) %>
 
     <div class="flex gap-4">
-      <%= render Ui::Links::Tertiary.new(text: "Cancel", url: cancel_url, css: "w-full") %>
+      <% if cancel_url %>
+        <%= render Ui::Links::Tertiary.new(text: "Cancel", url: cancel_url, css: "w-full") %>
+      <% end %>
       <%= render Ui::Buttons::Submit.new(form: f, text: "Submit", css: "w-full") %>
     </div>
 <% end %>
