@@ -16,8 +16,6 @@
   </div>
 
   <div class="flex flex-col gap-4">
-    <% tasks.each do |task| %>
-      <%= render Dashboard::TaskCard.new(task: task) %>
-    <% end %>
+    <%= render Dashboard::TaskCard.with_collection(tasks) %>
   </div>
 </div>
