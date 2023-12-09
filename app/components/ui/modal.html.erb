@@ -1,5 +1,5 @@
-<div data-controller="modal" data-action="turbo:submit-end->modal#closeOnSubmit click->modal#clickOutside" id="modal" aria-labelledby="modal" role="dialog" aria-modal="true" class="absolute inset-0 w-full h-full bg-gray-500 bg-opacity-75 transition-opacity z-10">
-  <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+<%= turbo_frame_tag "modal", data: { controller: "modal", action: "turbo:submit-end->modal#closeOnSubmit click->modal#clickOutside" }, class: "absolute inset-0 w-full h-full bg-gray-500 bg-opacity-75 transition-opacity z-10" do %>
+  <div aria-labelled-by="modal" aria-modal="true" role="dialog" class="fixed inset-0 z-10 w-screen overflow-y-auto">
     <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
       <div data-modal-target="content" class="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-2xl sm:p-10">
         <%= content %>
@@ -12,4 +12,4 @@
       </div>
     </div>
   </div>
-</div>
+<% end %>

@@ -16,6 +16,7 @@
   <body>
     <main>
       <%= yield %>
+      <%= turbo_frame_tag "modal", data: { controller: "modal", modal_target: "content" } %>
     </main>
   </body>
 </html>
