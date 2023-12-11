@@ -1,4 +1,4 @@
-<%= button_to url, method: method, data: data, class: "py-1 px-2 text-#{color}-600 bg-#{color}-100 font-medium rounded-lg shadow-sm hover:text-#{color}-700 hover:bg-#{color}-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-#{color}-600 #{css}" do %>
+<%= button_to url, method: method, data: data, class: "py-1 px-2 text-#{color}-600 bg-#{color}-100 font-semibold rounded-lg shadow-sm hover:text-#{color}-700 hover:bg-#{color}-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-#{color}-600 #{css}" do %>
   <% if icon %>
     <%= render Ui::Icon.new(icon: icon, css: "h-5 w-5") %>
   <% end %>
