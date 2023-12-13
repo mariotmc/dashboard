@@ -1,4 +1,7 @@
 class Task < ApplicationRecord
+  include RankedModel
+  ranks :row_order, with_same: :stage_id
+
   belongs_to :user
   belongs_to :stage
 

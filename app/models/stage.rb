@@ -1,4 +1,7 @@
 class Stage < ApplicationRecord
+  include RankedModel
+  ranks :row_order
+
   has_many :tasks, dependent: :destroy
 
   def self.active
