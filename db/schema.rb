@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_12_03_123539) do
+ActiveRecord::Schema[7.0].define(version: 2023_12_13_214258) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -70,6 +70,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_03_123539) do
     t.index ["task_id"], name: "index_pull_requests_on_task_id"
   end
 
+  create_table "stages", force: :cascade do |t|
+    t.text "status", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "tasks", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.text "title", null: false
@@ -77,8 +83,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_03_123539) do
     t.datetime "completed_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "stage", default: 0
     t.datetime "due_at"
+    t.bigint "stage_id"
+    t.index ["stage_id"], name: "index_tasks_on_stage_id"
     t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
@@ -94,5 +101,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_03_123539) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "external_task_trackers", "tasks"
   add_foreign_key "pull_requests", "tasks"
+  add_foreign_key "tasks", "stages"
   add_foreign_key "tasks", "users"
 end

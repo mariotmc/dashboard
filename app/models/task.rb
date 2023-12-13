@@ -1,5 +1,8 @@
 class Task < ApplicationRecord
   belongs_to :user
+  belongs_to :stage
+
+  has_rich_text :notes
 
   has_one :pull_request, dependent: :destroy
   has_one :external_task_tracker, dependent: :destroy
@@ -7,30 +10,16 @@ class Task < ApplicationRecord
   accepts_nested_attributes_for :pull_request
   accepts_nested_attributes_for :external_task_tracker
 
-  has_rich_text :notes
-
   enum priority: [:low, :medium, :high]
-  enum stage: [:active, :paused, :backlog]
 
   validates :title, presence: true
 
-  scope :active, -> { where(stage: 0, completed_at: nil) }
-  scope :paused, -> { where(stage: 1, completed_at: nil) }
-  scope :backlog, -> { where(stage: 2, completed_at: nil) }
+  scope :active, -> { Stage.active.tasks.where(completed_at: nil) }
+  scope :paused, -> { Stage.paused.tasks.where(completed_at: nil) }
+  scope :backlog, -> { Stage.backlog.tasks.where(completed_at: nil) }
 
   scope :due, -> { where.not(due_at: nil) }
   scope :completed, -> { where.not(completed_at: nil) }
-
-  def stage_scope
-    case stage
-    when "active"
-      Task.active
-    when "paused"
-      Task.paused
-    when "backlog"
-      Task.backlog
-    end
-  end
 
   def due_at?
     due_at.present?
