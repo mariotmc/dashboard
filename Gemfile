@@ -37,6 +37,8 @@ gem "view_component", "~> 3.6"
 
 gem "ranked-model"
 
+gem "requestjs-rails"
+
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
 end
