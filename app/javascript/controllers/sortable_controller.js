@@ -1,7 +1,7 @@
 import { Controller } from "@hotwired/stimulus";
 import Sortable from "sortablejs";
+import { put } from "@rails/request.js";
 
-// Connects to data-controller="sortable"
 export default class extends Controller {
   connect() {
     Sortable.create(this.element, {
@@ -10,6 +10,8 @@ export default class extends Controller {
   }
 
   onEnd(event) {
-    console.log(event.item.id);
+    const url = event.item.dataset.sortableUrl;
+
+    put(url, { body: JSON.stringify({ row_order_position: event.newIndex }) });
   }
 }

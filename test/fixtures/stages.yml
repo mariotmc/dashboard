@@ -1,8 +1,11 @@
 active:
   status: active
+  row_order: 0
 
 paused:
   status: paused
+  row_order: 1
 
 backlog:
   status: backlog
+  row_order: 2

@@ -1,21 +1,21 @@
-<div class="max-w-sm p-4">
+<div data-sortable-url="<%= stages_position_path(stage) %>" class="max-w-sm p-4">
   <div class="flex items-center mb-3">
     <div class="flex items-center gap-3">
       <%= render Ui::Icon.new(icon: icon, css: "text-#{color}-400") %>
 
-      <h2 class="text-gray-800 text-center font-semibold"><%= title %></h2>
+      <h2 class="text-gray-800 text-center font-semibold"><%= stage.status.capitalize %></h2>
 
-      <%= turbo_frame_tag "#{title.downcase}_counter", class: "py-0.5 px-2 bg-#{color}-100 text-#{color}-900 font-semibold rounded-lg" do %>
-        <%= tasks.count %>
+      <%= turbo_frame_tag "#{stage.status}_counter", class: "py-0.5 px-2 bg-#{color}-100 text-#{color}-900 font-semibold rounded-lg" do %>
+        <%= stage.tasks.count %>
       <% end %>
     </div>
 
     <div class="ml-auto">
-      <%= render Ui::Links::Round.new(url: url, icon: "plus", turbo_frame: "modal") %>
+      <%= render Ui::Links::Round.new(url: new_dashboard_task_path(stage: stage.status), icon: "plus", turbo_frame: "modal") %>
     </div>
   </div>
 
   <div data-controller="sortable" class="flex flex-col gap-4">
-    <%= render Dashboard::TaskCard.with_collection(tasks.rank(:row_order)) %>
+    <%= render Dashboard::TaskCard.with_collection(stage.tasks.rank(:row_order)) %>
   </div>
 </div>

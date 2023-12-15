@@ -11,5 +11,10 @@ Rails.application.routes.draw do
 
   namespace :tasks do
     resources :completes, only: [:update]
+    resources :positions, only: [:update]
+  end
+
+  namespace :stages do
+    resources :positions, only: [:update]
   end
 end
