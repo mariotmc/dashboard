@@ -17,12 +17,18 @@ class Task < ApplicationRecord
 
   validates :title, presence: true
 
+  before_create :set_row_order
+
   scope :active, -> { Stage.active.tasks.where(completed_at: nil) }
   scope :paused, -> { Stage.paused.tasks.where(completed_at: nil) }
   scope :backlog, -> { Stage.backlog.tasks.where(completed_at: nil) }
 
   scope :due, -> { where.not(due_at: nil) }
   scope :completed, -> { where.not(completed_at: nil) }
+
+  def set_row_order
+    stage.tasks.count + 1
+  end
 
   def due_at?
     due_at.present?
