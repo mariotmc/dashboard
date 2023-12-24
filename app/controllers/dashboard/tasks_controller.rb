@@ -6,7 +6,7 @@ module Dashboard
       @task = Task.new
       @task.build_pull_request
       @task.build_external_task_tracker
-      @stage = params[:stage] || "backlog"
+      @stage = Stage.find_by(status: params[:stage])
     end
 
     def create
@@ -16,7 +16,7 @@ module Dashboard
       if @task.save
         redirect_to dashboard_task_path(@task)
       else
-        @stage = task_params[:stage]
+        @stage = Stage.find(task_params[:stage_id])
         render :new, status: :unprocessable_entity
       end
     end
@@ -43,7 +43,7 @@ module Dashboard
 
     private
       def task_params
-        params.require(:task).permit(:user, :stage, :title, :priority, :due_at, :notes,
+        params.require(:task).permit(:user, :stage_id, :title, :priority, :due_at, :notes,
           external_task_tracker_attributes: [:id, :type, :link], pull_request_attributes: [:id, :type, :link])
       end
 
