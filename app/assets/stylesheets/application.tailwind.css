@@ -69,6 +69,18 @@ trix-toolbar .trix-button--icon {
   @apply hidden !important;
 }
 
+trix-editor {
+  @apply caret-indigo-500 prose;
+}
+
+trix-editor a {
+  @apply text-indigo-500 decoration-transparent hover:text-indigo-600 !important;
+}
+
+.trix-content a {
+  @apply text-indigo-500 decoration-transparent hover:text-indigo-600 !important;
+}
+
 #task_notes {
   @apply min-h-[112px] !important;
 }
