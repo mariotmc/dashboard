@@ -1,0 +1,7 @@
+<%= form_with model: @sesh, class: "space-y-8" do |f| %>
+  <%= render Ui::Forms::TextField.new(form: f, field: :email, placeholder: "Email", autofocus: true) %>
+
+  <%= render Ui::Forms::PasswordField.new(form: f, field: :password, placeholder: "Password") %>
+
+  <%= render Ui::Buttons::Submit.new(form: f, text: "Submit", css: "w-full") %>
+<% end %>

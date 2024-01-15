@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root "dashboard#index"
 
+  resource :sessions, only: [:new, :create, :destroy]
+
   resources :dashboard, only: [:index]
   namespace :dashboard do
     resources :tasks

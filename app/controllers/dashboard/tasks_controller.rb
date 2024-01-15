@@ -11,7 +11,6 @@ module Dashboard
 
     def create
       @task = Task.create(task_params)
-      @task.user = User.find_by(email: "jon@doe.com")
 
       if @task.save
         redirect_to dashboard_task_path(@task)
@@ -43,8 +42,12 @@ module Dashboard
 
     private
       def task_params
-        params.require(:task).permit(:user, :stage_id, :title, :priority, :due_at, :notes,
+        params
+          .require(:task)
+          .permit(:stage_id, :title, :priority, :due_at, :notes,
           external_task_tracker_attributes: [:id, :type, :link], pull_request_attributes: [:id, :type, :link])
+          .merge(user: Current.user)
+
       end
 
       def set_task
