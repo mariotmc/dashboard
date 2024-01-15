@@ -3,5 +3,11 @@
 
   <%= render Ui::Forms::PasswordField.new(form: f, field: :password, placeholder: "Password") %>
 
+  <ul class="mt-2 list-disc list-inside">
+    <% @sesh.errors.full_messages.each do |error| %>
+      <li class="list-item text-sm text-red-600 font-medium"><%= error %></li>
+    <% end %>
+  </ul>
+
   <%= render Ui::Buttons::Submit.new(form: f, text: "Submit", css: "w-full") %>
 <% end %>

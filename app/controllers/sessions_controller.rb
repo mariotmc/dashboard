@@ -7,21 +7,21 @@ class SessionsController < ApplicationController
   end
 
   def create
-    sesh = Session.new(session_params)
+    @sesh = Session.new(session_params)
 
-    if sesh.valid?
-      session[:user_id] = sesh.user.id
+    if @sesh.valid?
+      session[:user_id] = @sesh.user.id
       Current.user = User.find(session[:user_id])
       redirect_to root_path
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
   def destroy
     session[:user_id] = nil
     Current.user = nil
-    redirect_to new_session_path
+    redirect_to new_sessions_path
   end
 
   private

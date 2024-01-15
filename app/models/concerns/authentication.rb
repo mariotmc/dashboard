@@ -7,10 +7,10 @@ module Authentication
 
   private
     def authenticate
-      if authenticated_user = User.find(session[:user_id])
+      if session[:user_id] && authenticated_user = User.find(session[:user_id])
         Current.user = authenticated_user
       else
-        redirect_to new_session_path
+        redirect_to new_sessions_path
       end
     end
 end
