@@ -1,13 +1,26 @@
-<%= form_with model: @sesh, class: "space-y-8" do |f| %>
-  <%= render Ui::Forms::TextField.new(form: f, field: :email, placeholder: "Email", autofocus: true) %>
+<div class="absolute inset-0 overflow-hidden">
+  <img src="/beams.jpg" class="absolute left-1/2 top-0 -ml-[47.5rem] w-[122.5rem] max-w-none">
+</div>
 
-  <%= render Ui::Forms::PasswordField.new(form: f, field: :password, placeholder: "Password") %>
+<div class="relative flex flex-1 flex-col items-center justify-center h-full pb-16 pt-12">
+  <div class="mx-auto mb-10 h-auto w-auto text-slate-900">
+    <%= render Company::LogoWithText.new %>
+  </div>
 
-  <ul class="mt-2 list-disc list-inside">
-    <% @sesh.errors.full_messages.each do |error| %>
-      <li class="list-item text-sm text-red-600 font-medium"><%= error %></li>
+  <%= form_with model: @sesh, class: "space-y-6 w-full max-w-sm" do |f| %>
+
+    <%= render Ui::Forms::TextField.new(form: f, field: :email, placeholder: "Email", autofocus: true) %>
+
+    <%= render Ui::Forms::PasswordField.new(form: f, field: :password, placeholder: "Password") %>
+
+    <% if @sesh.errors.any? {|err| err.attribute == :base} %>
+      <ul class="!mt-2 list-disc">
+        <% @sesh.errors.full_messages.each do |error| %>
+          <li class="list-item ml-4 text-sm text-red-600 font-medium"><%= error %></li>
+        <% end %>
+      </ul>
     <% end %>
-  </ul>
 
-  <%= render Ui::Buttons::Submit.new(form: f, text: "Submit", css: "w-full") %>
-<% end %>
+    <%= render Ui::Buttons::Submit.new(form: f, text: "Sign in to account", css: "w-full") %>
+  <% end %>
+</div>
