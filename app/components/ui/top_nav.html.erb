@@ -19,13 +19,15 @@
         <div class="flex flex-shrink-0 items-center">
           <%= render Company::LogoWithText.new %>
         </div>
+
         <div class="hidden sm:ml-10 sm:flex sm:items-center sm:space-x-8">
           <%= link_to "Dashboard", dashboard_index_path, class: desktop_css(:dashboard) %>
           <%= link_to "Resources", resources_path, class: desktop_css(:resources) %>
           <%= link_to "Reminders", reminders_path, class: desktop_css(:reminders) %>
         </div>
+        
         <div class="ml-auto">
-          <%= button_to "Logout", sessions_path, method: :delete, class: "h-fit inline-flex items-center px-4 py-2 text-sm font-medium text-gray-500 rounded-md hover:bg-indigo-100 hover:text-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"  %>
+          <%= button_to "Sign out", sessions_path, method: :delete, class: "rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 hover:bg-gray-50" %>
         </div>
       </div>
     </div>
