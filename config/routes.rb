@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   resource :sessions, only: [:new, :create, :destroy]
 
+  resources :registrations, only: [:new,:create]
+
   resources :dashboard, only: [:index]
   namespace :dashboard do
     resources :tasks
