@@ -1,6 +1,7 @@
 module Dashboard
   class TasksController < ApplicationController
     before_action :set_task, only: [:show, :edit, :update, :destroy]
+    before_action :set_stage, only: [:new]
 
     def new
       @task = Task.new
@@ -52,6 +53,10 @@ module Dashboard
 
       def set_task
         @task = Task.find(params[:id])
+      end
+
+      def set_stage
+        @stage = Stage.find_by(status: params[:stage])
       end
   end
 end
