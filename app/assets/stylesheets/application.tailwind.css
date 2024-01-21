@@ -74,11 +74,11 @@ trix-editor {
 }
 
 trix-editor a {
-  @apply text-indigo-500 decoration-transparent hover:text-indigo-600 !important;
+  @apply text-indigo-500 decoration-transparent transition-colors hover:text-indigo-600 !important;
 }
 
 .trix-content a {
-  @apply text-indigo-500 decoration-transparent hover:text-indigo-600 !important;
+  @apply text-indigo-500 decoration-transparent transition-colors hover:text-indigo-600 !important;
 }
 
 #task_notes {

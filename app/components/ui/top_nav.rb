@@ -28,7 +28,7 @@ module Ui
       end
 
       def inactive_desktop_css
-        "h-fit inline-flex items-center px-2.5 py-1.5 text-sm font-medium text-gray-500 rounded-md hover:bg-indigo-100 hover:text-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+        "h-fit inline-flex items-center px-2.5 py-1.5 text-sm font-medium text-gray-500 rounded-md transition-colors hover:bg-indigo-100 hover:text-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
       end
 
       def active_mobile_css
@@ -36,7 +36,7 @@ module Ui
       end
 
       def inactive_mobile_css
-        "block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
+        "block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 transition-colors hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
       end
   end
 end
