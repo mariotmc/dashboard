@@ -2,26 +2,24 @@ module Dashboard
   class TasksList < Base
     with_collection_parameter :stage
 
+    STATUS = {
+      active: { color: "emerald", icon: "circle-half-stroke" },
+      paused: { color: "amber", icon: "circle-stop" },
+      backlog: { color: "stone", icon: "circle-dot" }
+    }.freeze
+
     def initialize(stage:)
       @stage = stage
-      attrs
+      set_attrs
     end
 
     private
       attr_reader :stage, :color, :icon
 
-      def attrs
-        case stage.status
-        when "active"
-          @color = "emerald"
-          @icon = "circle-half-stroke"
-        when "paused"
-          @color = "amber"
-          @icon = "circle-stop"
-        when "backlog"
-          @color = "stone"
-          @icon = "circle-dot"
-        end
+      def set_attrs
+        attrs = STATUS[stage.status.to_sym]
+        @color = attrs[:color]
+        @icon = attrs[:icon]
       end
   end
 end
