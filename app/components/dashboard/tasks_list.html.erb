@@ -6,7 +6,7 @@
       <h2 class="text-gray-800 text-center font-semibold"><%= stage.status.capitalize %></h2>
 
       <%= turbo_frame_tag "#{stage.status}_counter", class: "py-0.5 px-2 bg-#{color}-100 text-#{color}-900 font-semibold rounded-lg" do %>
-        <%= stage.tasks.count %>
+        <%= stage.tasks.for_user.count %>
       <% end %>
     </div>
 
@@ -16,6 +16,6 @@
   </div>
 
   <div data-controller="sortable" data-sortable-stage-id="<%= stage.id %>" data-sortable-group-value="tasks" class="flex flex-col gap-4">
-    <%= render Dashboard::TaskCard.with_collection(stage.tasks.rank(:row_order)) %>
+    <%= render Dashboard::TaskCard.with_collection(stage.tasks.for_user.rank(:row_order)) %>
   </div>
 </div>

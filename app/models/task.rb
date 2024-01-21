@@ -19,6 +19,8 @@ class Task < ApplicationRecord
 
   before_create :set_row_order
 
+  scope :for_user, -> { where(user_id: Current.user.id) }
+
   scope :active, -> { Stage.active.tasks.where(completed_at: nil) }
   scope :paused, -> { Stage.paused.tasks.where(completed_at: nil) }
   scope :backlog, -> { Stage.backlog.tasks.where(completed_at: nil) }
@@ -27,7 +29,7 @@ class Task < ApplicationRecord
   scope :completed, -> { where.not(completed_at: nil) }
 
   def set_row_order
-    stage.tasks.count + 1
+    stage.tasks.for_user.count + 1
   end
 
   def due_at?
