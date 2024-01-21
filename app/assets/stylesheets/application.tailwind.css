@@ -74,13 +74,17 @@ trix-editor {
 }
 
 trix-editor a {
-  @apply text-indigo-500 decoration-transparent transition-colors hover:text-indigo-600 !important;
-}
-
-.trix-content a {
-  @apply text-indigo-500 decoration-transparent transition-colors hover:text-indigo-600 !important;
+  @apply text-indigo-500 transition-colors hover:text-indigo-600 !important;
 }
 
 #task_notes {
   @apply min-h-[112px] !important;
+}
+
+.prose li::marker {
+  color: #818cf8;
+}
+
+.prose blockquote {
+  border-color: #818cf8;
 }
