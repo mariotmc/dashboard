@@ -1,8 +1,6 @@
 <div data-sortable-url="<%= stages_position_path(stage) %>" class="max-w-sm p-4">
   <div class="flex items-center mb-5">
     <div class="flex items-center gap-3">
-      <%= render_icon icon, classes: "h-6 w-6 text-#{color}-400" %>
-
       <h2 class="text-gray-800 text-center font-semibold"><%= stage.status.capitalize %></h2>
 
       <%= turbo_frame_tag "#{stage.status}_counter", class: "py-0.5 px-2 bg-#{color}-100 text-#{color}-900 text-sm font-semibold rounded-lg" do %>

@@ -3,9 +3,9 @@ module Dashboard
     with_collection_parameter :stage
 
     STATUS = {
-      active: { color: "emerald", icon: "play" },
-      paused: { color: "amber", icon: "pause" },
-      backlog: { color: "stone", icon: "stop" }
+      active: { color: "emerald" },
+      paused: { color: "amber" },
+      backlog: { color: "stone" }
     }.freeze
 
     def initialize(stage:)
@@ -14,12 +14,11 @@ module Dashboard
     end
 
     private
-      attr_reader :stage, :color, :icon
+      attr_reader :stage, :color
 
       def set_attrs
         attrs = STATUS[stage.status.to_sym]
         @color = attrs[:color]
-        @icon = attrs[:icon]
       end
   end
 end
