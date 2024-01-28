@@ -1,6 +1,6 @@
 <% if icon %>
   <%= link_to url, class: "flex justify-center items-center gap-1.5 rounded-md bg-white px-3 py-2 text-sm text-center font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 transition-colors hover:bg-gray-100 #{css}" do %>
-    <%= render Ui::Icon.new(icon: icon, css: icon_css) %>
+    <%= render_icon icon, classes: icon_css %>
     <% if text %>
       <%= text %>
     <% end %>

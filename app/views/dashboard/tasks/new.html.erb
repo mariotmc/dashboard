@@ -2,9 +2,9 @@
   <div class="max-w-sm py-10">
     <%= render Ui::Links::Secondary.new(text: "Tasks", icon: "arrow-left", url: dashboard_index_path) %>
 
-    <h1 class="flex items-center gap-3 mt-8 text-gray-800 text-3xl font-medium leading-4">
+    <h1 class="flex items-center gap-3 text-gray-800 text-2xl font-medium leading-4">
       New <%= @stage.capitalize %> Task
-      <%= render Ui::Icon.new(icon: "list-check", css: "h-6 w-6 text-indigo-600") %>
+      <%= render_icon "list", classes: "h-7 w-7 text-indigo-600" %>
     </h1>
 
     <%= render "form", submit_url: dashboard_tasks_path, cancel_url: dashboard_index_path, method: :post %>

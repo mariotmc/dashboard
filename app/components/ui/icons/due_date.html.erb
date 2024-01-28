@@ -1,4 +1,4 @@
 <div class="flex items-center gap-1 py-1 px-2 text-red-500 rounded-lg bg-red-50 text-xs font-semibold shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 <%= css %>">
-  <%= render Ui::Icon.new(icon: "calendar", css: "#{icon_css}") %>
+  <%= render_icon "calendar", classes: icon_css %>
   <%= due_date.strftime("%d.%m.") %>
 </div>

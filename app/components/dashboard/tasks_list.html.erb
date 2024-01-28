@@ -1,17 +1,17 @@
 <div data-sortable-url="<%= stages_position_path(stage) %>" class="max-w-sm p-4">
   <div class="flex items-center mb-5">
     <div class="flex items-center gap-3">
-      <%= render Ui::Icon.new(icon: icon, css: "text-#{color}-400") %>
+      <%= render_icon icon, classes: "h-6 w-6 text-#{color}-400" %>
 
       <h2 class="text-gray-800 text-center font-semibold"><%= stage.status.capitalize %></h2>
 
-      <%= turbo_frame_tag "#{stage.status}_counter", class: "py-0.5 px-2 bg-#{color}-100 text-#{color}-900 font-semibold rounded-lg" do %>
+      <%= turbo_frame_tag "#{stage.status}_counter", class: "py-0.5 px-2 bg-#{color}-100 text-#{color}-900 text-sm font-semibold rounded-lg" do %>
         <%= stage.tasks.for_user.count %>
       <% end %>
     </div>
 
     <div class="ml-auto">
-      <%= render Ui::Links::Round.new(url: new_dashboard_task_path(stage: stage.status), icon: "plus", turbo_frame: "modal") %>
+      <%= render Ui::Links::Round.new(url: new_dashboard_task_path(stage: stage.status), icon: "plus", icon_css: "h-4 w-4", turbo_frame: "modal") %>
     </div>
   </div>
 

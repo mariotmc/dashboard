@@ -1,14 +1,14 @@
 <%= render Dashboard::Layout.new(active: :dashboard) do %>
   <div class="max-w-3xl mx-auto py-20">
     <div class="flex justify-between items-center">
-      <%= render Ui::Links::Secondary.new(text: "Tasks", icon: "arrow-left", url: dashboard_index_path) %>
+      <%= render Ui::Links::Secondary.new(text: "Tasks", icon: "arrow_left", icon_css: "w-4 h-4", url: dashboard_index_path) %>
 
-      <h1 class="text-gray-800 text-3xl font-medium">
+      <h1 class="text-gray-800 text-2xl font-medium">
         <%= @task.title %>
       </h1>
 
       <div class="flex items-center gap-3">
-        <%= render Ui::Icons::Priority.new(priority: @task.priority) %>
+        <%= render Ui::Icons::Priority.new(priority: @task.priority, icon_css: "w-5 h-5") %>
 
         <% if @task.due_at? %>
           <%= render Ui::Icons::DueDate.new(due_date: @task.due_at, css: "!text-sm", icon_css: "h-5 w-5") %>
@@ -22,7 +22,7 @@
           <%= render @task.external_task_tracker, external_task_tracker: @task.external_task_tracker %>
         <% end %>
 
-        <%= render Ui::Links::Plain.new(icon: "pencil", url: edit_dashboard_task_path(@task), icon_css: "w-5 h-5") %>
+        <%= render Ui::Links::Secondary.new(icon: "pencil", url: edit_dashboard_task_path(@task), icon_css: "w-5 h-5") %>
       </div>
     </div>
 

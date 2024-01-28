@@ -1,3 +1,3 @@
 class Base < ViewComponent::Base
-  include Turbo::FramesHelper
+  include Turbo::FramesHelper, ApplicationHelper
 end

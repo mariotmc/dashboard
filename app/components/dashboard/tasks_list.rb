@@ -3,9 +3,9 @@ module Dashboard
     with_collection_parameter :stage
 
     STATUS = {
-      active: { color: "emerald", icon: "circle-half-stroke" },
-      paused: { color: "amber", icon: "circle-stop" },
-      backlog: { color: "stone", icon: "circle-dot" }
+      active: { color: "emerald", icon: "play" },
+      paused: { color: "amber", icon: "pause" },
+      backlog: { color: "stone", icon: "stop" }
     }.freeze
 
     def initialize(stage:)
