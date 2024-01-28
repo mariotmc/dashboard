@@ -22,7 +22,7 @@
           <%= render @task.external_task_tracker, external_task_tracker: @task.external_task_tracker %>
         <% end %>
 
-        <%= render Ui::Links::Secondary.new(icon: "pencil", url: edit_dashboard_task_path(@task), icon_css: "w-5 h-5") %>
+        <%= render Ui::Links::Secondary.new(icon: "pencil", url: edit_dashboard_task_path(@task), icon_css: "w-5 h-5", turbo_frame: "modal") %>
       </div>
     </div>
 
