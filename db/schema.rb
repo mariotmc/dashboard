@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_12_13_223513) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_28_212711) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -52,15 +52,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_13_223513) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "external_task_trackers", force: :cascade do |t|
-    t.text "type"
-    t.text "link"
-    t.bigint "task_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["task_id"], name: "index_external_task_trackers_on_task_id"
-  end
-
   create_table "pull_requests", force: :cascade do |t|
     t.text "type"
     t.datetime "created_at", null: false
@@ -91,6 +82,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_13_223513) do
     t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
+  create_table "tickets", force: :cascade do |t|
+    t.text "type"
+    t.text "link"
+    t.bigint "task_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["task_id"], name: "index_tickets_on_task_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.text "email", null: false
     t.text "username", null: false
@@ -101,8 +101,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_13_223513) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "external_task_trackers", "tasks"
   add_foreign_key "pull_requests", "tasks"
   add_foreign_key "tasks", "stages"
   add_foreign_key "tasks", "users"
+  add_foreign_key "tickets", "tasks"
 end

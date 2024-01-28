@@ -6,7 +6,7 @@ module Dashboard
     def new
       @task = Task.new
       @task.build_pull_request
-      @task.build_external_task_tracker
+      @task.build_ticket
       @stage = Stage.find_by(status: params[:stage])
     end
 
@@ -46,7 +46,7 @@ module Dashboard
         params
           .require(:task)
           .permit(:stage_id, :title, :priority, :due_at, :notes,
-          external_task_tracker_attributes: [:id, :type, :link], pull_request_attributes: [:id, :type, :link])
+          ticket_attributes: [:id, :type, :link], pull_request_attributes: [:id, :type, :link])
           .merge(user: Current.user)
 
       end

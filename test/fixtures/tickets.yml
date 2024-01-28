@@ -1,19 +1,19 @@
 basecamp_active_one:
-  type: ExternalTaskTracker::Basecamp
+  type: Ticket::Basecamp
   task: active_one
   link: https://3.basecamp.com
 
 basecamp_paused_one:
-  type: ExternalTaskTracker::Basecamp
+  type: Ticket::Basecamp
   task: paused_one
   link: https://3.basecamp.com
 
 linear_paused_two:
-  type: ExternalTaskTracker::Linear
+  type: Ticket::Linear
   task: paused_two
   link: https://linear.app
 
 linear_backlog_one:
-  type: ExternalTaskTracker::Linear
+  type: Ticket::Linear
   task: backlog_one
   link: https://linear.app

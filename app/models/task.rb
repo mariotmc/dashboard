@@ -8,10 +8,10 @@ class Task < ApplicationRecord
   has_rich_text :notes
 
   has_one :pull_request, dependent: :destroy
-  has_one :external_task_tracker, dependent: :destroy
+  has_one :ticket, dependent: :destroy
 
   accepts_nested_attributes_for :pull_request
-  accepts_nested_attributes_for :external_task_tracker
+  accepts_nested_attributes_for :ticket
 
   enum priority: [:low, :medium, :high]
 
@@ -40,7 +40,7 @@ class Task < ApplicationRecord
     pull_request&.link.present?
   end
 
-  def external_task_tracker_link?
-    external_task_tracker&.link.present?
+  def ticket_link?
+    ticket&.link.present?
   end
 end

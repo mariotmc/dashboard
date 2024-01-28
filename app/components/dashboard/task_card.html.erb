@@ -15,8 +15,8 @@
       <%= render task.pull_request, pull_request: task.pull_request %>
     <% end %>
 
-    <% if task.external_task_tracker_link? %>
-      <%= render task.external_task_tracker, external_task_tracker: task.external_task_tracker %>
+    <% if task.ticket_link? %>
+      <%= render task.ticket, ticket: task.ticket %>
     <% end %>
   </div>
 <% end %>

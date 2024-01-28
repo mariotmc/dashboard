@@ -16,8 +16,8 @@ module Ui
           case @field
           when :pull_request
            [["Github", "PullRequest::Github"]]
-          when :external_task_tracker
-           [["Linear", "ExternalTaskTracker::Linear"], ["Basecamp", "ExternalTaskTracker::Basecamp"]]
+          when :ticket
+           [["Linear", "Ticket::Linear"], ["Basecamp", "Ticket::Basecamp"]]
           end
         end
     end

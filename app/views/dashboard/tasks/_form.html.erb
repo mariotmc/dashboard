@@ -13,8 +13,8 @@
     
     <%= render Ui::Forms::DateField.new(form: f, field: :due_at, optional: true) %>
     
-    <%= f.fields_for :external_task_tracker do |ff| %>
-      <%= render Ui::Forms::UrlField.new(form: ff, field: :external_task_tracker, optional: true) %>
+    <%= f.fields_for :ticket do |ff| %>
+      <%= render Ui::Forms::UrlField.new(form: ff, field: :ticket, optional: true) %>
     <% end %>
     
     <%= f.fields_for :pull_request do |ff| %>
