@@ -82,9 +82,9 @@ trix-editor a {
 }
 
 .prose li::marker {
-  color: #818cf8;
+  @apply text-indigo-400;
 }
 
 .prose blockquote {
-  border-color: #818cf8;
+  @apply border-indigo-400;
 }
