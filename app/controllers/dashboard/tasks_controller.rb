@@ -14,7 +14,7 @@ module Dashboard
       @task = Task.create(task_params)
 
       if @task.save
-        redirect_to dashboard_task_path(@task)
+        redirect_to dashboard_task_path(@task), notice: "Task successfully saved"
       else
         @stage = Stage.find(task_params[:stage_id])
         render :new, status: :unprocessable_entity
@@ -26,7 +26,7 @@ module Dashboard
 
     def update
       if @task.update(task_params)
-        redirect_to dashboard_task_path(@task)
+        redirect_to dashboard_task_path(@task), notice: "Task successfully updated"
       else
         render :edit, status: :unprocessable_entity
       end
@@ -38,7 +38,7 @@ module Dashboard
     def destroy
       @task.destroy
 
-      redirect_to dashboard_index_path
+      redirect_to dashboard_index_path, notice: "Task successfully deleted"
     end
 
     private
@@ -48,7 +48,6 @@ module Dashboard
           .permit(:stage_id, :title, :priority, :due_at, :notes,
           ticket_attributes: [:id, :type, :link], pull_request_attributes: [:id, :type, :link])
           .merge(user: Current.user)
-
       end
 
       def set_task

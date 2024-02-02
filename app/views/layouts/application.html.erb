@@ -13,8 +13,13 @@
   </head>
 
   <body class="h-full">
-    <main class="h-full">
+    <main class="relative h-full overflow-hidden">
+      <% if notice %>
+        <%= render Ui::Flash.new(notice: notice) %>
+      <% end %>
+
       <%= yield %>
+
       <%= turbo_frame_tag "modal", data: { controller: "modal", modal_target: "content" } %>
     </main>
   </body>

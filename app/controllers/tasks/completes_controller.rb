@@ -5,7 +5,7 @@ module Tasks
     def update
       @task.update!(completed_at: Date.today)
 
-      redirect_to dashboard_index_path
+      redirect_to dashboard_index_path, notice: "Task successfully completed"
     end
 
     private
