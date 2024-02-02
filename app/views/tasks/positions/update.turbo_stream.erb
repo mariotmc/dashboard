@@ -1,7 +1,7 @@
 <%= turbo_stream.update "#{@origin_stage.status}_counter" do %>
-  <%= @origin_stage.tasks.for_user.count %>
+  <%= @origin_stage.tasks.for_user.incompleted.count %>
 <% end %>
 
 <%= turbo_stream.update "#{@destination_stage.status}_counter" do %>
-  <%= @destination_stage.tasks.for_user.count %>
+  <%= @destination_stage.tasks.for_user.incompleted.count %>
 <% end %>

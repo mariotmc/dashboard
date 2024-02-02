@@ -21,12 +21,9 @@ class Task < ApplicationRecord
 
   scope :for_user, -> { where(user_id: Current.user.id) }
 
-  scope :active, -> { Stage.active.tasks.where(completed_at: nil) }
-  scope :paused, -> { Stage.paused.tasks.where(completed_at: nil) }
-  scope :backlog, -> { Stage.backlog.tasks.where(completed_at: nil) }
-
   scope :due, -> { where.not(due_at: nil) }
   scope :completed, -> { where.not(completed_at: nil) }
+  scope :incompleted, -> { where(completed_at: nil) }
 
   def set_row_order
     stage.tasks.for_user.count + 1

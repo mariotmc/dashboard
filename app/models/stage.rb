@@ -4,15 +4,7 @@ class Stage < ApplicationRecord
 
   has_many :tasks, dependent: :destroy
 
-  def self.active
-    find_by(status: "active")
-  end
-
-  def self.paused
-    find_by(status: "paused")
-  end
-
-  def self.backlog
-    find_by(status: "backlog")
-  end
+  scope :active, -> { where(status: "active") }
+  scope :paused, -> { where(status: "paused") }
+  scope :backlog, -> { where(status: "backlog") }
 end
