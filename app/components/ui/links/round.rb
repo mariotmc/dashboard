@@ -1,4 +1,4 @@
-module Ui
+module UI
   module Links
     class Round < Base
       def initialize(url:, icon:, turbo_frame: "_top", css: nil, icon_css: nil)

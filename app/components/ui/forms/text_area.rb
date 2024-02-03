@@ -1,4 +1,4 @@
-module Ui
+module UI
   module Forms
     class TextArea < Base
       def initialize(form:, field:, placeholder: nil, optional: false, autofocus: false, rows: 4)

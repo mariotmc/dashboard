@@ -1,4 +1,4 @@
-module Ui
+module UI
   module Forms
     class RadioGroup < Base
       def initialize(label:)

@@ -1,4 +1,4 @@
-module Ui
+module UI
   module Links
     class Primary < Base
       def initialize(text: nil, url:, icon: nil, css: nil, icon_css: nil)

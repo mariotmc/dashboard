@@ -1,4 +1,4 @@
-module Ui
+module UI
   class TopNav < Base
     def initialize(active:)
       @active = active

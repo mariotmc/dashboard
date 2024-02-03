@@ -1,4 +1,4 @@
-module Ui
+module UI
   module Buttons
     class Action < Base
       def initialize(text: nil, icon: nil, url:, method:, data: {}, color:, css: nil)

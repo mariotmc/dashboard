@@ -1,4 +1,4 @@
-module Ui
+module UI
   module Icons
     class Priority < Base
       def initialize(priority:, icon_css: nil)

@@ -1,4 +1,4 @@
-module Ui
+module UI
   module Forms
     class UrlField < Base
       def initialize(form:, field:, optional: false, autofocus: false)

@@ -9,9 +9,9 @@
 
   <%= form_with model: @sesh, class: "space-y-6 w-full max-w-sm" do |f| %>
 
-    <%= render Ui::Forms::TextField.new(form: f, field: :email, placeholder: "Email", autofocus: true) %>
+    <%= render UI::Forms::TextField.new(form: f, field: :email, placeholder: "Email", autofocus: true) %>
 
-    <%= render Ui::Forms::PasswordField.new(form: f, field: :password, placeholder: "Password") %>
+    <%= render UI::Forms::PasswordField.new(form: f, field: :password, placeholder: "Password") %>
 
     <% if @sesh.errors.any? {|err| err.attribute == :base} %>
       <ul class="!mt-2 list-disc">
@@ -21,7 +21,7 @@
       </ul>
     <% end %>
 
-    <%= render Ui::Buttons::Submit.new(form: f, text: "Sign in", css: "w-full") %>
+    <%= render UI::Buttons::Submit.new(form: f, text: "Sign in", css: "w-full") %>
   <% end %>
 
   <p class="mt-10 text-center text-sm leading-6 text-gray-500">

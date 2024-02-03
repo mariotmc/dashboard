@@ -1,4 +1,4 @@
-module Ui
+module UI
   module Forms
     class RadioButton < Base
       def initialize(form:, field:, label: nil, value:, checked: false, autofocus: false)

@@ -3,30 +3,30 @@
 <%= form_with model: @task, url: submit_url, method: method, class: "space-y-8" do |f| %>
     <%= f.hidden_field :stage_id, value: @stage&.id || @task&.stage.id %>
 
-    <%= render Ui::Forms::TextField.new(form: f, field: :title, placeholder: "Add a task title", autofocus: true) %>
+    <%= render UI::Forms::TextField.new(form: f, field: :title, placeholder: "Add a task title", autofocus: true) %>
 
-    <%= render Ui::Forms::RadioGroup.new(label: "Priority") do %>
-      <%= render Ui::Forms::RadioButton.new(form: f, field: :priority, label: "Low", value: :low, checked: @task.priority == "low") %>
-      <%= render Ui::Forms::RadioButton.new(form: f, field: :priority, label: "Medium", value: :medium, checked: @task.priority == "medium") %>
-      <%= render Ui::Forms::RadioButton.new(form: f, field: :priority, label: "High", value: :high, checked: @task.priority == "high") %>
+    <%= render UI::Forms::RadioGroup.new(label: "Priority") do %>
+      <%= render UI::Forms::RadioButton.new(form: f, field: :priority, label: "Low", value: :low, checked: @task.priority == "low") %>
+      <%= render UI::Forms::RadioButton.new(form: f, field: :priority, label: "Medium", value: :medium, checked: @task.priority == "medium") %>
+      <%= render UI::Forms::RadioButton.new(form: f, field: :priority, label: "High", value: :high, checked: @task.priority == "high") %>
     <% end %>
     
-    <%= render Ui::Forms::DateField.new(form: f, field: :due_at, optional: true) %>
+    <%= render UI::Forms::DateField.new(form: f, field: :due_at, optional: true) %>
     
     <%= f.fields_for :ticket do |ff| %>
-      <%= render Ui::Forms::UrlField.new(form: ff, field: :ticket, optional: true) %>
+      <%= render UI::Forms::UrlField.new(form: ff, field: :ticket, optional: true) %>
     <% end %>
     
     <%= f.fields_for :pull_request do |ff| %>
-      <%= render Ui::Forms::UrlField.new(form: ff, field: :pull_request, optional: true) %>
+      <%= render UI::Forms::UrlField.new(form: ff, field: :pull_request, optional: true) %>
     <% end %>
 
-    <%= render Ui::Forms::RichTextArea.new(form: f, field: :notes, placeholder: "Add some notes", optional: true) %>
+    <%= render UI::Forms::RichTextArea.new(form: f, field: :notes, placeholder: "Add some notes", optional: true) %>
 
     <div class="flex gap-4">
       <% if cancel_url %>
-        <%= render Ui::Links::Tertiary.new(text: "Cancel", url: cancel_url, css: "w-full") %>
+        <%= render UI::Links::Tertiary.new(text: "Cancel", url: cancel_url, css: "w-full") %>
       <% end %>
-      <%= render Ui::Buttons::Submit.new(form: f, text: "Submit", css: "w-full") %>
+      <%= render UI::Buttons::Submit.new(form: f, text: "Submit", css: "w-full") %>
     </div>
 <% end %>

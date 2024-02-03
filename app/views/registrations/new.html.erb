@@ -12,11 +12,11 @@
         </div>
 
         <%= form_with model: @form, url: registrations_path, class: "space-y-6 w-full max-w-sm" do |f| %>
-          <%= render Ui::Forms::TextField.new(form: f, field: :email, placeholder: "Email", autofocus: true) %>
+          <%= render UI::Forms::TextField.new(form: f, field: :email, placeholder: "Email", autofocus: true) %>
 
-          <%= render Ui::Forms::TextField.new(form: f, field: :username, placeholder: "Username") %>
+          <%= render UI::Forms::TextField.new(form: f, field: :username, placeholder: "Username") %>
 
-          <%= render Ui::Forms::PasswordField.new(form: f, field: :password, placeholder: "Password") %>
+          <%= render UI::Forms::PasswordField.new(form: f, field: :password, placeholder: "Password") %>
 
           <% if @form.errors.any? {|err| err.attribute == :base} %>
             <ul class="!mt-2 list-disc">
@@ -26,7 +26,7 @@
             </ul>
           <% end %>
 
-          <%= render Ui::Buttons::Submit.new(form: f, text: "Sign up", css: "w-full !mt-10") %>
+          <%= render UI::Buttons::Submit.new(form: f, text: "Sign up", css: "w-full !mt-10") %>
         <% end %>
       </div>
 

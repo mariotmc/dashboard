@@ -1,4 +1,4 @@
-module Ui
+module UI
   class Flash < Base
     def initialize(notice:)
       @notice = notice

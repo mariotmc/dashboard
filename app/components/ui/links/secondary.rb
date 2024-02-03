@@ -1,4 +1,4 @@
-module Ui
+module UI
   module Links
     class Secondary < Base
       def initialize(text: nil, url:, icon: nil, turbo_frame: "_top", css: nil, icon_css: nil)

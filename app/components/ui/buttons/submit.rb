@@ -1,4 +1,4 @@
-module Ui
+module UI
   module Buttons
     class Submit < Base
       def initialize(form:, text:, css: nil)

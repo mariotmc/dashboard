@@ -1,5 +1,5 @@
 <%= turbo_stream.update "modal" do %>
-  <%= render Ui::Modal.new do %>
+  <%= render UI::Modal.new do %>
     <h1 class="flex items-center gap-3 text-gray-800 text-2xl font-medium leading-4">
       <%= render_icon "list", classes: "h-7 w-7 text-indigo-600" %>
       New <%= @stage.status.capitalize %> Task

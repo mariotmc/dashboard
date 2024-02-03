@@ -1,4 +1,4 @@
-module Ui
+module UI
   class Modal < Base
     def initialize
     end

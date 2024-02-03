@@ -1,4 +1,4 @@
-module Ui
+module UI
   module Icons
     class DueDate < Base
       def initialize(due_date:, css: nil, icon_css: nil)

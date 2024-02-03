@@ -1,4 +1,4 @@
-module Ui
+module UI
   module Links
     class Plain < Base
       def initialize(url:, icon:, css: nil, icon_css: nil)

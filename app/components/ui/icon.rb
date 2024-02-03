@@ -1,4 +1,4 @@
-module Ui
+module UI
   class Icon < Base
     def initialize(icon:, css: nil)
       @icon = icon
