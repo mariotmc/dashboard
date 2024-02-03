@@ -18,9 +18,11 @@
         <%= render UI::Flash.new(notice: notice) %>
       <% end %>
 
-      <%= yield %>
-
       <%= turbo_frame_tag "modal", data: { controller: "modal", modal_target: "content" } %>
+
+      <%= render UI::DeleteConfirmation.new %>
+
+      <%= yield %>
     </main>
   </body>
 </html>

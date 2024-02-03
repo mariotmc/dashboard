@@ -34,7 +34,7 @@
 
     <div class="flex items-center gap-3">
       <div class="w-full">
-        <%= render UI::Buttons::Action.new(text: "Delete", url: dashboard_task_path(@task), method: :delete, data: { turbo: false }, color: "red", css: "w-full py-2") %>
+        <%= render UI::Buttons::Action.new(text: "Delete", url: dashboard_task_path(@task), method: :delete, data: { turbo_confirm: "Once deleted, the task and all associated data will be lost forever. This action cannot be undone." }, color: "red", css: "w-full py-2") %>
       </div>
       <div class="w-full">
         <%= render UI::Buttons::Action.new(text: "Complete", url: tasks_complete_path(@task), method: :put, data: { turbo: false }, color: "indigo", css: "w-full py-2") %>
