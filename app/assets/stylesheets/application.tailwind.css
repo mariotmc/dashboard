@@ -14,7 +14,7 @@
 @import "actiontext.css";
 
 trix-toolbar {
-  @apply w-fit mt-1 mb-2 py-2 px-1.5 bg-indigo-50 rounded-lg !important;
+  @apply w-fit mt-1 mb-2 p-1 bg-indigo-50 rounded-lg !important;
 }
 
 trix-toolbar .trix-button-group:not(:first-child) {

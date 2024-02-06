@@ -1,6 +1,6 @@
 <% cancel_url = local_assigns[:cancel_url] || nil %>
 
-<%= form_with model: @task, url: submit_url, method: method, class: "space-y-8" do |f| %>
+<%= form_with model: @task, url: submit_url, method: method, class: "space-y-6" do |f| %>
     <%= f.hidden_field :stage_id, value: @stage&.id || @task&.stage.id %>
 
     <%= render UI::Forms::TextField.new(form: f, field: :title, placeholder: "Add a task title", autofocus: true) %>
