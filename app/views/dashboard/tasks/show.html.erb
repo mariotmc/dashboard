@@ -1,11 +1,12 @@
 <%= render Dashboard::Layout.new(active: :dashboard) do %>
   <div class="max-w-3xl mx-auto py-20">
+    <h1 class="mb-10 text-center text-gray-800 text-2xl font-medium">
+      <%= @task.title %>
+    </h1>
+
     <div class="flex justify-between items-center">
       <%= render UI::Links::Secondary.new(text: "Tasks", icon: "arrow_left", icon_css: "w-4 h-4", url: dashboard_index_path) %>
 
-      <h1 class="text-gray-800 text-2xl font-medium">
-        <%= @task.title %>
-      </h1>
 
       <div class="flex items-center gap-3">
         <%= render UI::Icons::Priority.new(priority: @task.priority, icon_css: "w-5 h-5") %>
@@ -27,7 +28,7 @@
     </div>
 
     <% if @task.notes.present? %>
-      <div class="w-full my-10 py-10 px-5 border border-indigo-100 rounded-lg">
+      <div class="w-full mt-5 mb-10 py-10 px-5 border border-indigo-100 rounded-lg">
         <%= @task.notes %>
       </div>
     <% end %>
