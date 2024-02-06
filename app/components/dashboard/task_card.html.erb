@@ -1,6 +1,6 @@
 <%= turbo_frame_tag task, data: { sortable_url: tasks_position_path(task) }, class: "p-4 rounded-lg shadow cursor-grab active:cursor-grabbing" do %>
   <div class="flex justify-between items-center pb-2">
-    <h3 class="text-gray-800 font-semibold"><%= task.title.truncate(30) %></h3>
+    <h3 class="text-gray-800 text-sm font-semibold"><%= task.title.truncate(65) %></h3>
     <%= render UI::Links::Plain.new(url: dashboard_task_path(task), icon: "arrow_right", icon_css: "w-4 h-4") %>
   </div>
 
