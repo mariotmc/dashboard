@@ -70,7 +70,11 @@ trix-toolbar .trix-button--icon {
 }
 
 trix-editor {
-  @apply caret-indigo-500 prose max-w-fit;
+  @apply caret-indigo-500 prose;
+}
+
+trix-editor {
+  @apply w-full min-w-full !important;
 }
 
 trix-editor a {
