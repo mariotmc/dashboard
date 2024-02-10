@@ -1,5 +1,5 @@
 <%= form_with model: @task, url: submit_url, method: method do |f| %>
-  <div class="prose prose-sm prose-indigo w-full min-w-fit">
+  <div class="prose prose-sm prose-indigo w-full min-w-full">
     <%= f.rich_text_area :notes, class: "block w-full min-w-fit max-w-full min-h-80 rounded-md text-gray-900 !border-none !outline-none placeholder:text-gray-400 sm:text-sm sm:leading-6", placeholder: "Add some notes", autofocus: true %>
   </div>
 
