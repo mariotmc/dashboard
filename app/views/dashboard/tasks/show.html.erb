@@ -28,8 +28,21 @@
     </div>
 
     <% if @task.notes.present? %>
-      <div class="w-full mt-5 mb-10 py-10 px-5 border border-indigo-100 rounded-lg">
-        <%= @task.notes %>
+      <div data-controller="inline-edit" class="w-full mt-5 mb-10 px-5 border border-indigo-100 rounded-lg">
+        <div data-inline-edit-target="element">
+          <div class="block w-fit ml-auto pt-3 pr-2">
+            <button data-action="inline-edit#edit" class="flex items-center gap-1.5 w-full rounded-lg bg-indigo-50 px-2 py-1 text-sm font-semibold text-indigo-600 shadow-sm transition-colors hover:bg-indigo-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+              Edit Notes
+            </button>
+          </div>
+          <div class="pt-2 pb-10">
+            <%= @task.notes %>
+          </div>
+        </div>
+
+        <div data-inline-edit-target="form" class="hidden py-5">
+          <%= render partial: "notes_inline_form", locals: { submit_url: dashboard_task_path, method: :put } %>
+        </div>
       </div>
     <% end %>
 

@@ -1,0 +1,12 @@
+<%= form_with model: @task, url: submit_url, method: method do |f| %>
+  <div class="prose prose-sm prose-indigo w-full min-w-fit">
+    <%= f.rich_text_area :notes, class: "block w-full min-w-fit min-h-80 rounded-md text-gray-900 !border-none !outline-none placeholder:text-gray-400 sm:text-sm sm:leading-6", placeholder: "Add some notes", autofocus: true %>
+  </div>
+
+  <div class="flex gap-4 mt-2">
+    <button type="button" data-action="inline-edit#cancel" class="flex justify-center items-center gap-1.5 w-fit rounded-md bg-white px-3 py-2 text-sm text-center font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 transition-colors hover:bg-gray-100">
+      Cancel
+    </button>
+    <%= render UI::Buttons::Submit.new(form: f, text: "Submit", css: "w-fit") %>
+  </div>
+<% end %>
