@@ -201,6 +201,10 @@ GEM
     rake (13.1.0)
     ranked-model (0.4.9)
       activerecord (>= 5.2)
+    ransack (4.1.1)
+      activerecord (>= 6.1.5)
+      activesupport (>= 6.1.5)
+      i18n
     rdoc (6.6.2)
       psych (>= 4.0.0)
     redis (5.0.8)
@@ -292,6 +296,7 @@ DEPENDENCIES
   puma
   rails
   ranked-model
+  ransack
   redis
   requestjs-rails
   ruby-lsp-rails

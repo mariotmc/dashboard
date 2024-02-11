@@ -21,6 +21,7 @@ gem "image_processing"
 gem "view_component"
 gem "ranked-model"
 gem "requestjs-rails"
+gem "ransack"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
