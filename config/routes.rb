@@ -10,7 +10,6 @@ Rails.application.routes.draw do
     resources :tasks
   end
 
-  resources :resources
   resources :reminders
 
   namespace :tasks do
