@@ -1,5 +1,5 @@
 <%= turbo_stream.update "modal" do %>
   <%= render UI::Modal.new do %>
-    <%= render "form", submit_url: dashboard_task_path, method: :put %>
+    <%= render "form", submit_url: dashboard_task_path, cancel_url: dashboard_task_path, method: :put %>
   <% end %>
 <% end %>
