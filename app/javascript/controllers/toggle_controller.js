@@ -6,7 +6,7 @@ export default class extends Controller {
   toggle() {
     this.targetTarget.classList.toggle("hidden");
 
-    if (this.openIconTarget && this.closeIconTarget) {
+    if (this.hasOpenIconTarget && this.hasCloseIconTarget) {
       this.openIconTarget.classList.toggle("hidden");
       this.closeIconTarget.classList.toggle("hidden");
     }
