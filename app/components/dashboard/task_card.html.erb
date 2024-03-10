@@ -4,6 +4,15 @@
     <%= render UI::Links::Plain.new(url: dashboard_task_path(task), icon: "arrow_right", icon_css: "w-4 h-4") %>
   </div>
 
+  <% if task.notes.present? %>
+    <div class="pb-3 text-xs text-gray-500">
+      <%= task.notes.body.to_plain_text[0...80] %>
+      <% if task.notes.body.to_plain_text.length >= 80 %>
+        ...
+      <% end %>
+    </div>
+  <% end %>
+
   <div class="flex flex-wrap items-center gap-1">
     <%= render UI::Icons::Priority.new(priority: task.priority, icon_css: "h-4 w-4") %>
 
