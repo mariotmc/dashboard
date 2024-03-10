@@ -10,8 +10,6 @@ Rails.application.routes.draw do
     resources :tasks
   end
 
-  resources :reminders
-
   namespace :tasks do
     resources :completes, only: [:update]
     resources :positions, only: [:update]
