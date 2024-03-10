@@ -1,5 +1,5 @@
 <%= render Dashboard::Layout.new(active: :dashboard) do %>
-  <div class="flex min-h-screen py-5 overflow-x-auto sm:grid sm:grid-cols-3 sm:py-10 sm:gap-14 px-1">
+  <div class="flex gap-10 min-h-screen py-5 px-1 overflow-x-auto sm:grid sm:grid-cols-3 sm:py-10 sm:gap-14">
     <%= render Dashboard::TasksList.with_collection(@stages) %>
   </div>
 <% end %>
