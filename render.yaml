@@ -1,7 +1,7 @@
 databases:
   - name: devboard
     databaseName: devboard
-    user: devboard
+    user: mariotmc
     plan: free
 
 services:
