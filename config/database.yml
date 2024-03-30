@@ -21,6 +21,7 @@ test:
 
 production:
   adapter: postgresql
+  url: <%= ENV["DATABASE_URL"] %>
   database: devboard_production
   # username: devboard
   # password: <%= ENV["DEVBOARD_DATABASE_PASSWORD"] %>
