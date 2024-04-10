@@ -6,6 +6,10 @@ paused:
   status: paused
   row_order: 1
 
+waiting:
+  status: waiting
+  row_order: 2
+
 backlog:
   status: backlog
-  row_order: 2
+  row_order: 3

@@ -18,6 +18,16 @@ paused_two:
   name: notes
   body: <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores velit exercitationem quasi animi debitis expedita consequatur eveniet commodi ratione, consectetur deleniti reprehenderit, quis cupiditate natus, adipisci neque necessitatibus id libero laboriosam illo fugit? Dicta tempora, fugit aut quos molestiae dolorum nihil exercitationem, sequi ullam impedit unde vitae quod blanditiis vero?</div>
 
+waiting_one:
+  record: waiting_one (Task)
+  name: notes
+  body: <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores velit exercitationem quasi animi debitis expedita consequatur eveniet commodi ratione, consectetur deleniti reprehenderit, quis cupiditate natus, adipisci neque necessitatibus id libero laboriosam illo fugit? Dicta tempora, fugit aut quos molestiae dolorum nihil exercitationem, sequi ullam impedit unde vitae quod blanditiis vero?</div>
+
+waiting_two:
+  record: waiting_two (Task)
+  name: notes
+  body: <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores velit exercitationem quasi animi debitis expedita consequatur eveniet commodi ratione, consectetur deleniti reprehenderit, quis cupiditate natus, adipisci neque necessitatibus id libero laboriosam illo fugit? Dicta tempora, fugit aut quos molestiae dolorum nihil exercitationem, sequi ullam impedit unde vitae quod blanditiis vero?</div>
+
 backlog_one:
   record: backlog_one (Task)
   name: notes
