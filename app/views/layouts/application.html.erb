@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="h-full">
+<html>
   <head>
     <title>Devboard</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -12,8 +12,8 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="h-full">
-    <main class="relative h-full overflow-hidden">
+  <body>
+    <main class="relative">
       <% if notice %>
         <%= render UI::Flash.new(notice: notice) %>
       <% end %>

@@ -1,7 +1,7 @@
-<div class="pb-10">
+<div class="relative">
   <%= render ::UI::TopNav.new(active: :dashboard) %>
 
-  <div class="mx-auto max-w-6xl px-2 sm:px-6 lg:px-8">
+  <div class="w-max max-w-6xl mx-auto px-2 sm:max-w-[1400px] sm:px-6 overflow-x-auto">
     <%= content %>
   </div>
 </div>

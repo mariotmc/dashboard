@@ -5,6 +5,7 @@ module Dashboard
     STATUS = {
       active: { color: "emerald" },
       paused: { color: "amber" },
+      waiting: { color: "rose" },
       backlog: { color: "stone" }
     }.freeze
 
